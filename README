@@ -1,0 +1,73 @@
+
+List of ebuilds :
+=================
+
+ * app-emulation/fs-uae
+ * app-emulation/fs-uae-launcher
+ * dev-python/python-lhafile
+ -------------------------------
+	https://bugs.gentoo.org/show_bug.cgi?id=403913
+
+	fs-uae-2.4.1 - gentoo bug #403913 comment #27
+	fs-uae-launcher-2.4.1 - gentoo bug #403913 comment #27
+
+	dev-python/python-lhafile-0.1.0_p3 - gentoo bug #403913 comment #24
+
+
+ * app-misc/rbutil
+ -----------------
+ 	https://bugs.gentoo.org/show_bug.cgi?id=183494
+	http://data.gpo.zugaina.org/xmw/media-sound/rbutil/
+
+	1.4.0 - Coming from gentoo bug #183494 comment #24
+
+
+ * games-puzzle/hex-a-hop
+ ------------------------
+ 	1.1.0 - Don't remember where this ebuild comes from, sorry.
+
+
+ * games-strategy/hedgewars
+ --------------------------
+ 	https://bugs.gentoo.org/show_bug.cgi?id=247114
+
+	hedgewars with server support
+
+	0.9.20.5 - gentoo bug #247114 comment #45
+
+
+ * media-video/motion
+ --------------------
+	https://bugs.gentoo.org/show_bug.cgi?id=376225
+	http://sourceforge.net/p/motion/mailman/message/31699956/
+	https://github.com/hyperbolic2346/motion
+	http://www.linuxquestions.org/questions/slackware-14/motion-arm-4175456488/
+
+	Modified version of 9999 ebuild that you can find in
+	comment #2 of gentoo bug #376225.
+	Builds the github version with some security fixs.
+	Also adds a patch for allow build on arm.
+
+
+ * media-video/uvccapture
+ ------------------------
+   	http://gpo.zugaina.org/Overlays/ago/media-video/uvccapture
+
+	0.5 - Coming from git.gentoo.org ago's overlay
+
+
+ * media-video/uvcdynctrl
+ ------------------------
+   	https://bugs.gentoo.org/show_bug.cgi?id=303405
+	http://gpo.zugaina.org/Overlays/ago/media-video/uvcdynctrl
+
+	0.2.4 - Also coming git.gentoo.org ago's overlay
+	0.2.6 - Bumped version of 0.2.4
+		0.2.5 src package is in fact 0.2.6 version
+		No way to open an upstream bug ?
+
+
+ * www-client/qarte
+ ------------------
+	https://bugs.gentoo.org/show_bug.cgi?id=481974
+

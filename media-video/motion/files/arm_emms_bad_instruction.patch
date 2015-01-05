@@ -1,0 +1,15 @@
+--- ffmpeg.c.old	2014-01-30 15:47:41.937104766 +0100
++++ ffmpeg.c	2014-01-30 15:47:54.371105321 +0100
+@@ -1000,9 +1000,9 @@
+     /* We assume using 'PIX_FMT_YUV420P' always */
+     avpicture_deinterlace(&picture, &picture, PIX_FMT_YUV420P, width, height);
+ 
+-#ifndef __SSE_MATH__
+-    __asm__ __volatile__ ( "emms");
+-#endif
++//#ifndef __SSE_MATH__
++//    __asm__ __volatile__ ( "emms");
++//#endif
+ 
+     return;
+ }
