@@ -1,3 +1,8 @@
+To clone :
+==========
+
+  $ git clone https://github.com/netfab/overlay.git netfab
+
 
 List of ebuilds :
 =================
@@ -46,7 +51,7 @@ List of ebuilds :
 	Modified version of 9999 ebuild that you can find in
 	comment #2 of gentoo bug #376225.
 	Builds the github version with some security fixs.
-	Also adds a patch for allow build on arm.
+	Also adds a patch to allow build on arm.
 
 
  * media-video/uvccapture
