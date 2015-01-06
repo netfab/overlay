@@ -41,6 +41,12 @@ List of ebuilds :
 	0.9.20.5 - gentoo bug #247114 comment #45
 
 
+ * games-util/joystickwake
+ -------------------------
+	https://github.com/foresto/joystickwake
+	https://bugs.gentoo.org/show_bug.cgi?id=535696
+
+
  * media-video/motion
  --------------------
 	https://bugs.gentoo.org/show_bug.cgi?id=376225
