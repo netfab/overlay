@@ -1,0 +1,10 @@
+--- a/cmake/Modules/FindIrrlicht.cmake
++++ b/cmake/Modules/FindIrrlicht.cmake
+@@ -48,6 +48,7 @@
+ 		PATHS
+ 		/usr/local/lib
+ 		/usr/lib
++		/usr/lib64
+ 	)
+ endif()
+ 
