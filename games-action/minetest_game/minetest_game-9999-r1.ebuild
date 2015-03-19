@@ -26,6 +26,15 @@ src_install() {
 	doins -r mods menu
 	doins game.conf minetest.conf
 
+	local x pofile filepath
+	for x in $(find "${D}"/mods/ -mindepth 4 -name *.po); do
+		pofile=${x##*/}
+		pofile=${pofile:0:0-3}
+		filepath=${x%/*}
+		echo -n "${filepath}/${pofile}.po : "
+		msgfmt "${filepath}/${pofile}.po" -cv -o "${filepath}/${pofile}.mo"
+	done
+
 	dodoc README.txt game_api.txt
 
 	prepgamesdirs
