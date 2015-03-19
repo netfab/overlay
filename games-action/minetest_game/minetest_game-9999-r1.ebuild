@@ -27,7 +27,8 @@ src_install() {
 	doins game.conf minetest.conf
 
 	local x pofile filepath
-	for x in $(find "${D}"/mods/ -mindepth 4 -name *.po); do
+	local modpath="${D}/${GAMES_DATADIR}"/minetest/games/${PN}/mods/
+	for x in $(find "${modpath}" -mindepth 4 -name *.po); do
 		pofile=${x##*/}
 		pofile=${pofile:0:0-3}
 		filepath=${x%/*}
