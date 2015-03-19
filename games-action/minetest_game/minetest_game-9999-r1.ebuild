@@ -26,15 +26,18 @@ src_install() {
 	doins -r mods menu
 	doins game.conf minetest.conf
 
+	# builds mo files
 	local x pofile filepath
 	local modpath="${D}/${GAMES_DATADIR}"/minetest/games/${PN}/mods/
-	for x in $(find "${modpath}" -mindepth 4 -name *.po); do
+	for x in $(find "${modpath}" -mindepth 4 -name '*.po'); do
 		pofile=${x##*/}
 		pofile=${pofile:0:0-3}
 		filepath=${x%/*}
 		echo -n "${filepath}/${pofile}.po : "
 		msgfmt "${filepath}/${pofile}.po" -cv -o "${filepath}/${pofile}.mo"
 	done
+	# delete po files
+	find "${modpath}" -name '*.po' -delete
 
 	dodoc README.txt game_api.txt
 
