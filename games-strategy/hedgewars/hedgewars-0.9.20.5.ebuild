@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-strategy/hedgewars/hedgewars-0.9.20.5.ebuild,v 1.1 2014/08/27 07:51:08 mr_bones_ Exp $
+# $Id$
 
 # TODO: when physfs-2.1.0 hits the tree, set
 # -DPHYSFS_SYSTEM=ON
