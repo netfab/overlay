@@ -42,6 +42,6 @@ src_compile() {
 
 python_install() {
 	cd "${S}" || die
-	distutils-r1_python_install --install-lib="$(python_get_sitedir)/${PN}"
-	emake DESTDIR="${D}" install mo
+	distutils-r1_python_install --install-lib="${ROOT}usr/share/${PN}"
+	emake prefix="${ROOT}usr" DESTDIR="${D}" install
 }
