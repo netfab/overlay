@@ -27,14 +27,6 @@ List of ebuilds :
 	1.4.0 - Coming from gentoo bug #183494 comment #24
 
 
- * games-action/minetest
- * games-action/minetest_game
- ----------------------------
-	https://github.com/hasufell/hasufell-overlay/
-
-	Added some minor changes from portage.
-
-
  * games-puzzle/hex-a-hop
  ------------------------
  	1.1.0 - Don't remember where this ebuild comes from, sorry.
