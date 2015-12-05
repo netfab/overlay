@@ -32,15 +32,6 @@ List of ebuilds :
  	1.1.0 - Don't remember where this ebuild comes from, sorry.
 
 
- * games-strategy/hedgewars
- --------------------------
- 	https://bugs.gentoo.org/show_bug.cgi?id=247114
-
-	hedgewars with server support
-
-	0.9.20.5 - gentoo bug #247114 comment #45
-
-
  * games-util/joystickwake
  -------------------------
 	https://github.com/foresto/joystickwake
