@@ -8,8 +8,8 @@ MY_PV="${PV/_}"
 MY_P="${PN}-${MY_PV}"
 
 DESCRIPTION="Amiga emulator based on WinUAE emulation code"
-HOMEPAGE="http://fs-uae.net/"
-SRC_URI="http://fs-uae.net/fs-uae/stable/${MY_PV}/${MY_P}.tar.gz"
+HOMEPAGE="https://fs-uae.net/"
+SRC_URI="https://fs-uae.net/fs-uae/stable/${MY_PV}/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

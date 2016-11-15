@@ -4,7 +4,7 @@
 
 EAPI=5
 
-PYTHON_COMPAT=( python{3_3,3_4} )
+PYTHON_COMPAT=( python{3_3,3_4,3_5} )
 PYTHON_REQ_USE="sqlite"
 
 inherit eutils distutils-r1
@@ -13,8 +13,8 @@ MY_PV="${PV/_}"
 MY_P="${PN}-${MY_PV}"
 
 DESCRIPTION="PyQt4 launcher for FS-UAE"
-HOMEPAGE="http://fs-uae.net/"
-SRC_URI="http://fs-uae.net/fs-uae/stable/${MY_PV}/${MY_P}.tar.gz"
+HOMEPAGE="https://fs-uae.net/"
+SRC_URI="https://fs-uae.net/fs-uae/stable/${MY_PV}/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
