@@ -38,7 +38,7 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	${PYTHON_DEPS}
 	dev-python/notify-python
-	>=dev-python/PyQt4-4.4
+	dev-python/PyQt5
 	dev-python/sip
 	>=media-video/rtmpdump-2.3"
 
@@ -46,7 +46,7 @@ src_install() {
 	cd "${S}"
 	insinto "/usr/share/${PN}"
 	doins *.py
-	doins -r commonwidgets crontab medias VWidgets
+	doins -r medias
 
 	dodoc README
 	doman qarte.1
