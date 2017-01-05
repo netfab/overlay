@@ -46,7 +46,7 @@ src_install() {
 	cd "${S}"
 	insinto "/usr/share/${PN}"
 	doins *.py
-	doins -r medias
+	doins -r gui medias
 
 	doman qarte.1
 	doicon qarte.png
