@@ -48,7 +48,6 @@ src_install() {
 	doins *.py
 	doins -r medias
 
-	dodoc README
 	doman qarte.1
 	doicon qarte.png
 	domenu q_arte.desktop
@@ -60,7 +59,8 @@ src_install() {
 
 	local x
 	for x in $LINGUAS; do
-		msgfmt -c -o i18n/${x}.mo i18n/${x}.po
+		msguniq --use-first i18n/${x}.po > i18n/${x}-uniq.po
+		msgfmt -c -o i18n/${x}.mo i18n/${x}-uniq.po
 		domo i18n/${x}.mo
 	done
 }
