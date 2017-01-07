@@ -21,8 +21,3 @@ DEPEND="media-libs/libsdl2[joystick,opengl,X]
 	media-libs/freetype:2"
 RDEPEND="${DEPEND}"
 
-src_prepare() {
-	# QA Notice: This package installs one or more .desktop
-	# files that do not pass validation.
-	sed -i -e 's,x-adf$,x-adf;,' share/applications/fs-uae.desktop || die "sed failed"
-}
