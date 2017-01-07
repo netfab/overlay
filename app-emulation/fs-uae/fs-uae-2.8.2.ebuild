@@ -13,11 +13,12 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="media-libs/libsdl2[joystick,opengl,X]
-	media-libs/openal
+DEPEND="dev-libs/glib:2
+	media-libs/freetype:2
+	media-libs/libmpeg2
 	media-libs/libpng
-	dev-libs/glib:2
-	sys-libs/zlib
-	media-libs/freetype:2"
+	media-libs/libsdl2[joystick,opengl,X]
+	media-libs/openal
+	sys-libs/zlib"
 RDEPEND="${DEPEND}"
 
