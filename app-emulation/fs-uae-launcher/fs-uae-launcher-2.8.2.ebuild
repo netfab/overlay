@@ -9,12 +9,9 @@ PYTHON_REQ_USE="sqlite"
 
 inherit eutils distutils-r1
 
-MY_PV="${PV/_}"
-MY_P="${PN}-${MY_PV}"
-
 DESCRIPTION="PyQt4 launcher for FS-UAE"
 HOMEPAGE="https://fs-uae.net/"
-SRC_URI="https://fs-uae.net/fs-uae/stable/${MY_PV}/${MY_P}.tar.gz"
+SRC_URI="https://fs-uae.net/fs-uae/stable/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -27,8 +24,6 @@ DEPEND="|| ( dev-python/PyQt5[${PYTHON_USEDEP}]
 	dev-python/python-lhafile[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}"
-
-S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
 	# Remove bundled six bug #546730
