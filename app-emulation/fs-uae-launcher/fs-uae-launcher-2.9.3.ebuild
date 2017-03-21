@@ -34,9 +34,9 @@ S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
 	default
-
 	# Remove bundled requests package
 	sed -i '/"requests": "."/d' setup.py || die "sed failure"
+	distutils-r1_src_prepare
 }
 
 src_compile() {
