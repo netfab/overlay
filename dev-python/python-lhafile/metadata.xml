@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<!-- maintainer-needed -->
+  <upstream>
+    <maintainer status="active">
+      <email>frode@fs-uae.net</email>
+      <name>Frode Solheim</name>
+    </maintainer>
+    <bugs-to>https://github.com/FrodeSolheim/python-lhafile/issues</bugs-to>
+  </upstream>
+</pkgmetadata>
