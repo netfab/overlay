@@ -12,7 +12,7 @@ MY_CHAN="devel"
 MY_PV="${PV}dev"
 MY_P="${P}dev"
 
-DESCRIPTION="PyQt4 launcher for FS-UAE"
+DESCRIPTION="PyQt5 launcher for FS-UAE"
 HOMEPAGE="https://fs-uae.net/"
 SRC_URI="https://fs-uae.net/fs-uae/${MY_CHAN}/${MY_PV}/${MY_P}.tar.gz"
 
