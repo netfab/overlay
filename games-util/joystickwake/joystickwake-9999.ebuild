@@ -13,7 +13,7 @@ EGIT_REPO_URI="git://github.com/foresto/joystickwake.git"
 DESCRIPTION="A joystick-aware screen waker"
 HOMEPAGE="https://github.com/foresto/joystickwake"
 
-LICENSE="as-is"
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""

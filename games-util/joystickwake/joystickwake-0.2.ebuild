@@ -14,7 +14,7 @@ EGIT_COMMIT="e55e11f9c0afb5f9d5836d878287944948efc3dc"
 DESCRIPTION="A joystick-aware screen waker"
 HOMEPAGE="https://github.com/foresto/joystickwake"
 
-LICENSE="as-is"
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
