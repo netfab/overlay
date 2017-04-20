@@ -38,19 +38,6 @@ List of ebuilds :
 	https://bugs.gentoo.org/show_bug.cgi?id=535696
 
 
- * media-video/motion
- --------------------
-	https://bugs.gentoo.org/show_bug.cgi?id=376225
-	http://sourceforge.net/p/motion/mailman/message/31699956/
-	https://github.com/hyperbolic2346/motion
-	http://www.linuxquestions.org/questions/slackware-14/motion-arm-4175456488/
-
-	Modified version of 9999 ebuild that you can find in
-	comment #2 of gentoo bug #376225.
-	Builds the github version with some security fixs.
-	Also adds a patch to allow build on arm.
-
-
  * media-video/uvccapture
  ------------------------
    	http://gpo.zugaina.org/Overlays/ago/media-video/uvccapture
