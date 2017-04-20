@@ -12,11 +12,10 @@ List of ebuilds :
  * dev-python/python-lhafile
  -------------------------------
 	https://bugs.gentoo.org/show_bug.cgi?id=403913
-
-	fs-uae-2.4.1 - gentoo bug #403913 comment #27
-	fs-uae-launcher-2.4.1 - gentoo bug #403913 comment #27
-
-	dev-python/python-lhafile-0.1.0_p3 - gentoo bug #403913 comment #24
+	https://fs-uae.net/download#linux
+	https://github.com/FrodeSolheim/fs-uae
+	https://github.com/FrodeSolheim/fs-uae-launcher
+	https://fengestad.no/python-lhafile/
 
 
  * app-misc/rbutil
