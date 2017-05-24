@@ -23,12 +23,8 @@ List of ebuilds :
  	https://bugs.gentoo.org/show_bug.cgi?id=183494
 	http://data.gpo.zugaina.org/xmw/media-sound/rbutil/
 
-	1.4.0 - Coming from gentoo bug #183494 comment #24
-
-
- * games-puzzle/hex-a-hop
- ------------------------
- 	1.1.0 - Don't remember where this ebuild comes from, sorry.
+	1.4.0	 - gentoo bug #183494#c24
+	1.4.0-r1 - revbump of 1.4.0 with EAPI 6
 
 
  * games-util/joystickwake
