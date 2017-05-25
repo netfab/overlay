@@ -49,7 +49,7 @@ src_install() {
 
 	if ! use sound; then
 		einfo "removing ogg files"
-		rm -f "${D}/${GAMES_DATADIR}/${PN}"/*.ogg || die "rm failure"
+		rm -f "${D}/usr/share/${PN}"/*.ogg || die "rm failure"
 	fi
 
 	doicon "${FILESDIR}"/${PN}.xpm
