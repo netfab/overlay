@@ -6,7 +6,7 @@ EAPI="6"
 EGIT_REPO_URI="https://github.com/netfab/libg15-gnome15"
 EGIT_BRANCH="dev"
 
-inherit autotools git-r3
+inherit autotools git-r3 multilib-minimal
 
 DESCRIPTION="Library for Logitech G15 Gaming Keyboard and similar devices features"
 HOMEPAGE="https://github.com/netfab/libg15-gnome15"
@@ -16,12 +16,16 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="virtual/libusb:0
+RDEPEND="virtual/libusb:0[${MULTILIB_USEDEP}]
 	!dev-libs/libg15"
-DEPEND="virtual/libusb:0"
+DEPEND="${RDEPEND}"
 
 src_prepare() {
 	default
 	eautoreconf
+}
+
+multilib_src_configure() {
+	ECONF_SOURCE="${S}" econf
 }
 
