@@ -19,6 +19,8 @@ IUSE=""
 RDEPEND="virtual/libusb:0[${MULTILIB_USEDEP}]"
 DEPEND="${RDEPEND}"
 
+DOCS=()
+
 src_prepare() {
 	default
 	eautoreconf
