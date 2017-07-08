@@ -74,7 +74,8 @@ gnome?       ( gnome-base/libgnomeui
 			   dev-python/pygobject )
 fonts?		 ( media-fonts/font-misc-misc )
 g15?         ( !app-misc/g15daemon
-			   dev-libs/libg15-gnome15 )
+			   || ( >=dev-libs/libg15-1.3.0.4
+			   dev-libs/libg15-gnome15 ) )
 google?      ( dev-python/gdata )
 gstreamer?   ( dev-python/gst-python:0.10 )
 lg4l-module? ( >=sys-kernel/lg4l-kernel-module-20150216 )
