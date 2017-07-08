@@ -71,7 +71,7 @@ gnome?       ( gnome-base/libgnomeui
 			   dev-python/gnome-applets-python
 			   dev-python/gnome-desktop-python
 			   dev-python/gnome-keyring-python
-			   dev-python/pygobject )
+			   dev-python/pygobject:2 )
 fonts?		 ( media-fonts/font-misc-misc )
 g15?         ( !app-misc/g15daemon
 			   || ( >=dev-libs/libg15-1.3.0.4
@@ -83,7 +83,7 @@ lm_sensors?  ( dev-python/PySensors )
 pulseaudio?  ( sci-libs/fftw:3.0
 			   media-sound/pulseaudio )
 rss?         ( dev-python/feedparser )
-systray?     ( dev-python/pygobject )
+systray?     ( dev-python/pygobject:2 )
 telepathy?   ( dev-python/telepathy-python )
 title?       ( dev-python/setproctitle )
 "
