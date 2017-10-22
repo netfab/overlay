@@ -23,10 +23,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="|| ( dev-python/PyQt5[${PYTHON_USEDEP}]
-	dev-python/pyside[${PYTHON_USEDEP}] )
-	dev-python/pygame[${PYTHON_USEDEP}]
-	dev-python/python-lhafile[${PYTHON_USEDEP}]
-	dev-python/six[${PYTHON_USEDEP}]"
+			 dev-python/pyside[${PYTHON_USEDEP}] )
+		dev-python/python-lhafile[${PYTHON_USEDEP}]
+		dev-python/six[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}"
 
 src_prepare() {
