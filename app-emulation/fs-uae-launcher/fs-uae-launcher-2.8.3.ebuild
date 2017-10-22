@@ -1,6 +1,5 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
@@ -13,7 +12,7 @@ MY_CHAN="stable"
 MY_PV="${PV}"
 MY_P="${P}"
 
-DESCRIPTION="PyQt4 launcher for FS-UAE"
+DESCRIPTION="PyQt5 launcher for FS-UAE"
 HOMEPAGE="https://fs-uae.net/"
 SRC_URI="https://fs-uae.net/fs-uae/${MY_CHAN}/${MY_PV}/${MY_P}.tar.gz"
 
@@ -26,7 +25,8 @@ DEPEND="|| ( dev-python/PyQt5[${PYTHON_USEDEP}]
 			 dev-python/pyside[${PYTHON_USEDEP}] )
 		dev-python/python-lhafile[${PYTHON_USEDEP}]
 		dev-python/six[${PYTHON_USEDEP}]"
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+	app-emulation/fs-uae"
 
 src_prepare() {
 	default
