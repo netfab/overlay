@@ -26,6 +26,20 @@ List of ebuilds :
 	1.4.0	 - gentoo bug #183494#c24
 	1.4.0-r1 - revbump of 1.4.0 with EAPI 6
 
+ * games-action/minecraft
+ ------------------------
+	Original ebuild is coming from java overlay.
+	Then, it was updated in chaos overlay.
+	And updated again here.
+
+	Missing dependencies are currently in java-overlay.
+
+	minecraft-gentoo environment stuff is broken,
+	you should play with upstream libraries.
+
+	https://github.com/gentoo/java-overlay
+	https://github.com/chaoskagami/chaos-overlay
+
 
  * games-util/joystickwake
  -------------------------
