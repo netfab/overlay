@@ -1,11 +1,10 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 PYTHON_COMPAT=( python{2_7,3_1,3_2,3_3,3_4} )
 
-inherit eutils python-r1 games java-pkg-2
+inherit eutils python-r1 java-pkg-2
 
 DESCRIPTION="A game about placing blocks while running from skeletons. Or something like that"
 HOMEPAGE="http://www.minecraft.net"
@@ -16,18 +15,18 @@ KEYWORDS="~amd64"
 RESTRICT="mirror"
 
 DEPEND="app-arch/zip
-	>=virtual/jdk-1.7"
+	>=virtual/jdk-1.8"
 
 RDEPEND="dev-java/gson:2.2.2
 	dev-java/java-config:2
-	>=dev-java/jopt-simple-4.5:0
+	>=dev-java/jopt-simple-4.8:0
 	>=dev-java/bcprov-1.47:0
 	>=dev-java/commons-io-2.4:1
 	dev-java/commons-lang:3.3
-	dev-java/guava:18
+	dev-java/guava:20
 	dev-java/jinput:0
 	dev-java/jutils:0
-	>=dev-java/lwjgl-2.9.1
+	>=dev-java/lwjgl-2.9.3
 	dev-java/paulscode-codecjorbis:0
 	dev-java/paulscode-codecwav:0
 	dev-java/paulscode-librarylwjglopenal:0
@@ -38,7 +37,6 @@ S="${WORKDIR}"
 
 pkg_setup() {
 	java-pkg-2_pkg_setup
-	games_pkg_setup
 }
 
 src_unpack() {
@@ -46,6 +44,7 @@ src_unpack() {
 }
 
 src_prepare() {
+	default
 	sed "s:@GENTOO_PORTAGE_EPREFIX@:${EPREFIX}:g" "${FILESDIR}/${PN}-gentoo" > "${PN}-gentoo" || die
 }
 
@@ -55,16 +54,14 @@ src_install() {
 	java-pkg_register-dependency gson-2.2.2
 	java-pkg_register-dependency jopt-simple
 
-	python_scriptinto "${GAMES_PREFIX}/bin"
+	python_scriptinto "/usr/bin"
 	python_foreach_impl python_doscript "${PN}-gentoo"
 
 	java-pkg_dojar "${PN}.jar"
-	java-pkg_dolauncher "${PN}" -into "${GAMES_PREFIX}" --main net.minecraft.bootstrap.Bootstrap
+	java-pkg_dolauncher "${PN}" -into "/usr" --main net.minecraft.bootstrap.Bootstrap
 
 	doicon "${FILESDIR}/${PN}.png"
 	make_desktop_entry "${PN}" "Minecraft"
-
-	prepgamesdirs
 }
 
 pkg_postinst() {
@@ -87,6 +84,4 @@ pkg_postinst() {
 	ewarn ""
 	ewarn "This version has been fixed - Forge is installable if you like mods."
 	echo
-
-	games_pkg_postinst
 }
