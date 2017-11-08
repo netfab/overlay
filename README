@@ -28,15 +28,13 @@ List of ebuilds :
 
  * games-action/minecraft
  ------------------------
-	Original ebuild is coming from java overlay.
-	Then, it was updated in chaos overlay.
-	And updated again here.
+	Original ebuild is coming from java overlay (1.2.1-r5).
+	Then, it was updated in chaos overlay (1.2.4).
+	And updated again here with 1.6.84 ebuild.
 
 	Missing dependencies are currently in java-overlay.
 
-	minecraft-gentoo environment stuff is broken,
-	you should play with upstream libraries.
-
+	https://bugs.gentoo.org/343197
 	https://github.com/gentoo/java-overlay
 	https://github.com/chaoskagami/chaos-overlay
 
