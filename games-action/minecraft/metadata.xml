@@ -8,4 +8,7 @@ you can imagine. At night, monsters come out so make sure to build a
 shelter before that happens. It features both single-player and
 multi-player modes.
 </longdescription>
+<use>
+	<flag name="narrator">Enable minecraft narrator's mode support with app-accessibility/flite.</flag>
+</use>
 </pkgmetadata>

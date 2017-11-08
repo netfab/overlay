@@ -14,6 +14,8 @@ SLOT="0"
 KEYWORDS="~amd64"
 RESTRICT="mirror"
 
+IUSE="narrator"
+
 DEPEND="app-arch/zip
 	>=virtual/jdk-1.8"
 
@@ -31,7 +33,8 @@ RDEPEND="dev-java/gson:2.2.2
 	dev-java/paulscode-codecwav:0
 	dev-java/paulscode-librarylwjglopenal:0
 	dev-java/paulscode-libraryjavasound:0
-	dev-java/paulscode-soundsystem:0"
+	dev-java/paulscode-soundsystem:0
+	narrator? ( app-accessibility/flite )"
 
 S="${WORKDIR}"
 
