@@ -11,7 +11,7 @@ DESCRIPTION="Gnome tools for the Logitech G Series Keyboards And Z-10 Speakers"
 HOMEPAGE="http://wiki.gentoo.org/wiki/No_homepage"
 
 if [[ "${PV}" == "9999" ]]; then
-	EGIT_REPO_URI="git://github.com/netfab/gnome15.git"
+	EGIT_REPO_URI="https://github.com/netfab/gnome15.git"
 	EGIT_BRANCH="dev"
 	inherit git-r3
 	SRC_URI=""
