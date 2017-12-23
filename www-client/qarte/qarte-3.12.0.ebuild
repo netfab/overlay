@@ -10,9 +10,12 @@ if [[ ${PV} = 9999 ]]; then
 	EBZR_REPO_URI="lp:qarte"
 	inherit bzr
 	KEYWORDS=""
+	SRC_URI=""
+	DEPEND="sys-devel/gettext"
 else
 	KEYWORDS="~amd64 ~x86"
 	SRC_URI="https://www.oqapy.eu/releases/${P}.tar.gz"
+	DEPEND=""
 fi
 
 inherit desktop l10n python-r1
@@ -25,7 +28,6 @@ SLOT="0"
 
 IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	${PYTHON_DEPS}
 	dev-python/notify-python
@@ -36,7 +38,11 @@ RDEPEND="${DEPEND}
 src_prepare() {
 	default
 
-	l10n_find_plocales_changes "${S}/locale" "" ""
+	if [[ ${PV} = 9999 ]]; then
+		l10n_find_plocales_changes "${S}/i18n" "" ".po"
+	else
+		l10n_find_plocales_changes "${S}/locale" "" ""
+	fi
 }
 
 src_install() {
@@ -53,9 +59,15 @@ src_install() {
 	local MOPREFIX=${PN}
 
 	install_locale() {
-		local modir="locale/${1}/LC_MESSAGES"
-		cp "${modir}/${PN}.mo" "${modir}/${1}.mo"
-		domo "${modir}/${1}.mo"
+		if [[ ${PV} = 9999 ]]; then
+			msguniq --use-first i18n/${1}.po > i18n/${1}-uniq.po
+			msgfmt -c -o i18n/${1}.mo i18n/${1}-uniq.po
+			domo i18n/${1}.mo
+		else
+			local modir="locale/${1}/LC_MESSAGES"
+			cp "${modir}/${PN}.mo" "${modir}/${1}.mo"
+			domo "${modir}/${1}.mo"
+		fi
 	}
 
 	l10n_for_each_locale_do install_locale
