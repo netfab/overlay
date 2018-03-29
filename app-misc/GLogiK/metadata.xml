@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>netbox253@gmail.com</email>
+		<name>Fabrice Delliaux</name>
+	</maintainer>
+	<upstream>
+		<maintainer status="active">
+			<email>netbox253@gmail.com</email>
+			<name>Fabrice Delliaux</name>
+		</maintainer>
+		<bugs-to>https://framagit.org/netfab/GLogiK/issues</bugs-to>
+	</upstream>
+	<longdescription lang="en">
+Daemon to handle special features on gaming keyboards.
+Supported devices :
+	* Logitech G510s Gaming Keyboard - 046d:c22d
+	</longdescription>
+	<use>
+		<flag name="consolekit">consolekit Seat and Session Manager</flag>
+		<flag name="elogind">elogind Seat and Session Manager</flag>
+	</use>
+</pkgmetadata>
