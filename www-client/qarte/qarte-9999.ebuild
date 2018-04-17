@@ -31,7 +31,7 @@ IUSE=""
 RDEPEND="${DEPEND}
 	${PYTHON_DEPS}
 	dev-python/notify-python
-	dev-python/PyQt5
+	dev-python/PyQt5[multimedia,svg]
 	dev-python/sip
 	>=media-video/rtmpdump-2.3"
 
