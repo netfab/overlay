@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -31,7 +31,7 @@ IUSE=""
 RDEPEND="${DEPEND}
 	${PYTHON_DEPS}
 	dev-python/notify-python
-	dev-python/PyQt5
+	dev-python/PyQt5[multimedia,svg]
 	dev-python/sip
 	>=media-video/rtmpdump-2.3"
 
