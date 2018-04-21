@@ -61,7 +61,7 @@ RDEPEND="${OBSOLETE_PACKAGES} \
 			   dev-python/pyinputevent
 			   virtual/udev
 			   dev-python/keyring
-			   x11-themes/gnome-icon-theme
+			   x11-themes/adwaita-icon-theme
 alsa?        ( dev-python/pyalsa
 			   dev-python/pyalsaaudio )
 cairo?       ( x11-misc/cairo-clock
@@ -214,7 +214,6 @@ src_configure() {
 	# finally, the config
 	GST_REGISTRY="${T}/gstreamer-registry" \
 		econf \
-		--disable-udev-rules-prefix \
 		$(use_enable ayatana indicator) \
 		$(use_enable systray systemtray) \
 		$(use_enable gnome   gnome-shell-extension) \
