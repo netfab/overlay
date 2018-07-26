@@ -7,7 +7,7 @@ PYTHON_COMPAT=( python{3_4,3_5,3_6,3_7} )
 
 inherit distutils-r1 git-r3
 
-EGIT_REPO_URI="git://github.com/foresto/joystickwake.git"
+EGIT_REPO_URI="https://github.com/foresto/joystickwake.git"
 
 DESCRIPTION="A joystick-aware screen waker"
 HOMEPAGE="https://github.com/foresto/joystickwake"
