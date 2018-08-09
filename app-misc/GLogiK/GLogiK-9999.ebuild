@@ -16,16 +16,17 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 REQUIRED_USE="^^ ( consolekit elogind systemd )"
-IUSE="consolekit debug elogind systemd"
+IUSE="consolekit debug elogind libnotify systemd"
 
 DEPEND="
-	>=dev-libs/boost-1.62.0
+	>=dev-libs/boost-1.64.0
 	dev-libs/libevdev
 	virtual/libusb:1
 	sys-apps/dbus
 	virtual/libudev
 	x11-libs/libICE
-	x11-libs/libSM"
+	x11-libs/libSM
+	libnotify? ( >=x11-libs/libnotify-0.7.7 )"
 RDEPEND="
 	consolekit? ( >=sys-auth/consolekit-1.1.2 )
 	elogind? ( sys-auth/elogind )
@@ -41,7 +42,8 @@ src_prepare() {
 
 src_configure() {
 	econf \
-		$(use_enable debug)
+		$(use_enable debug) \
+		$(use_enable libnotify desktop-notifications)
 }
 
 pkg_postinst() {
