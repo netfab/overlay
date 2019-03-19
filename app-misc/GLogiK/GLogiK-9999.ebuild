@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -43,7 +43,8 @@ src_prepare() {
 src_configure() {
 	econf \
 		$(use_enable debug) \
-		$(use_enable libnotify desktop-notifications)
+		$(use_enable libnotify desktop-notifications) \
+		${EXTRA_ECONF}
 }
 
 pkg_postinst() {
@@ -54,7 +55,7 @@ pkg_postinst() {
 	elog "See https://wiki.gentoo.org/wiki/Knowledge_Base:Adding_a_user_to_a_group"
 	elog
 	elog "After adding users to this group, and also after ${PN} installation,"
-	elog "you need to reload the DBus daemon configuration :"
+	elog "you may need to reload the DBus daemon configuration :"
 	elog	"(openRC users)"
 	elog "   # /etc/init.d/dbus reload"
 }
