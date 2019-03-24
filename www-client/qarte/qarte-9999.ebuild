@@ -1,8 +1,8 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
-PYTHON_COMPAT=( python{3_4,3_5,3_6} )
+PYTHON_COMPAT=( python{3_5,3_6} )
 
 PLOCALES="de fr pt"
 
@@ -11,7 +11,9 @@ if [[ ${PV} = 9999 ]]; then
 	inherit bzr
 	KEYWORDS=""
 	SRC_URI=""
-	DEPEND="sys-devel/gettext"
+	DEPEND="
+		dev-vcs/bzr
+		sys-devel/gettext"
 else
 	KEYWORDS="~amd64 ~x86"
 	SRC_URI="https://www.oqapy.eu/releases/${P}.tar.gz"
