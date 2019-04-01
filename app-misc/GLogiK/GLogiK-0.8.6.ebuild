@@ -14,13 +14,18 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 REQUIRED_USE="^^ ( consolekit elogind systemd )"
-IUSE="consolekit debug elogind libnotify systemd"
+IUSE="consolekit debug elogind libnotify +qt5 systemd"
 
 DEPEND="
 	>=dev-libs/boost-1.64.0
 	dev-libs/libevdev
 	virtual/libusb:1
 	sys-apps/dbus
+	qt5? (
+		dev-qt/qtcore:5
+		dev-qt/qtgui:5
+		dev-qt/qtwidgets:5
+	)
 	virtual/libudev
 	x11-libs/libICE
 	x11-libs/libSM
@@ -36,7 +41,8 @@ DOCS=( AUTHORS COPYING ChangeLog NEWS VERSION README )
 src_configure() {
 	econf \
 		$(use_enable debug) \
-		$(use_enable libnotify desktop-notifications)
+		$(use_enable libnotify desktop-notifications) \
+		$(use_enable qt5)
 }
 
 pkg_postinst() {
