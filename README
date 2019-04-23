@@ -1,22 +1,6 @@
-To clone :
-==========
-
-  $ git clone https://github.com/netfab/overlay.git netfab
-
 
 List of ebuilds :
 =================
-
- * app-emulation/fs-uae
- * app-emulation/fs-uae-launcher
- * dev-python/python-lhafile
- -------------------------------
-	https://bugs.gentoo.org/show_bug.cgi?id=403913
-	https://fs-uae.net/download#linux
-	https://github.com/FrodeSolheim/fs-uae
-	https://github.com/FrodeSolheim/fs-uae-launcher
-	https://fengestad.no/python-lhafile/
-
 
  * app-misc/rbutil
  -----------------
