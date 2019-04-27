@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 REQUIRED_USE="^^ ( consolekit elogind systemd )"
-IUSE="consolekit debug elogind libnotify +qt5 systemd"
+IUSE="consolekit debug elogind +qt5 systemd"
 
 DEPEND="
 	>=dev-libs/boost-1.64.0
@@ -30,8 +30,7 @@ DEPEND="
 	)
 	virtual/libudev
 	x11-libs/libICE
-	x11-libs/libSM
-	libnotify? ( >=x11-libs/libnotify-0.7.7 )"
+	x11-libs/libSM"
 RDEPEND="
 	consolekit? ( >=sys-auth/consolekit-1.1.2 )
 	elogind? ( sys-auth/elogind )
