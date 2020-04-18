@@ -1,7 +1,7 @@
 # Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 EGIT_REPO_URI="https://framagit.org/netfab/GLogiK.git/"
 EGIT_BRANCH="dev"
@@ -32,6 +32,8 @@ DEPEND="
 	x11-libs/libICE
 	x11-libs/libSM"
 RDEPEND="
+	acct-group/glogiks
+	acct-user/glogikd
 	consolekit? ( >=sys-auth/consolekit-1.1.2 )
 	elogind? ( sys-auth/elogind )
 	systemd? ( sys-apps/systemd )
@@ -52,9 +54,6 @@ src_configure() {
 }
 
 pkg_postinst() {
-	enewgroup plugdev
-	enewgroup glogiks
-	enewuser glogikd -1 -1 /dev/null "plugdev"
 	elog "Users who wants to use the GLogiKs desktop service must be in the glogiks group."
 	elog "See https://wiki.gentoo.org/wiki/Knowledge_Base:Adding_a_user_to_a_group"
 	elog
