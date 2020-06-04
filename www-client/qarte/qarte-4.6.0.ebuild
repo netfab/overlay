@@ -1,13 +1,15 @@
-# Copyright 1999-2019 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
-PYTHON_COMPAT=( python{3_5,3_6} )
+PYTHON_COMPAT=( python{3_6,3_7,3_8,3_9} )
 
 PLOCALES="de fr pt"
 
 if [[ ${PV} = 9999 ]]; then
 	EBZR_REPO_URI="lp:qarte"
+	# bzr eclass removed
+	# https://bugs.gentoo.org/719892
 	inherit bzr
 	KEYWORDS=""
 	SRC_URI=""
