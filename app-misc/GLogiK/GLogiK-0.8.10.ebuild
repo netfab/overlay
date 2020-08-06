@@ -30,6 +30,8 @@ DEPEND="
 	x11-libs/libICE
 	x11-libs/libSM"
 RDEPEND="
+	acct-group/glogiks
+	acct-user/glogikd
 	consolekit? ( >=sys-auth/consolekit-1.1.2 )
 	elogind? ( sys-auth/elogind )
 	systemd? ( sys-apps/systemd )
