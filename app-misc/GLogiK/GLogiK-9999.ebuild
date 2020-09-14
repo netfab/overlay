@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 REQUIRED_USE="^^ ( consolekit elogind systemd )"
-IUSE="consolekit debug elogind +qt5 systemd"
+IUSE="consolekit +dbus debug elogind +qt5 systemd"
 
 DEPEND="
 	>=dev-libs/boost-1.64.0
@@ -48,6 +48,7 @@ src_prepare() {
 
 src_configure() {
 	econf \
+		$(use_enable dbus) \
 		$(use_enable debug) \
 		$(use_enable qt5) \
 		${EXTRA_ECONF}
@@ -61,10 +62,4 @@ pkg_postinst() {
 	elog "you may need to reload the DBus daemon configuration :"
 	elog	"(openRC users)"
 	elog "   # /etc/init.d/dbus reload"
-}
-
-src_install() {
-	emake DESTDIR="${D}" install
-	einstalldocs
-	doinitd "${S}"/data/init/openrc/glogikd
 }
