@@ -46,9 +46,6 @@ src_configure() {
 }
 
 pkg_postinst() {
-	enewgroup plugdev
-	enewgroup glogiks
-	enewuser glogikd -1 -1 /dev/null "plugdev"
 	elog "Users who wants to use the GLogiKs desktop service must be in the glogiks group."
 	elog "See https://wiki.gentoo.org/wiki/Knowledge_Base:Adding_a_user_to_a_group"
 	elog
