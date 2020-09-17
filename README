@@ -2,14 +2,6 @@
 List of ebuilds :
 =================
 
- * app-misc/rbutil
- -----------------
- 	https://bugs.gentoo.org/show_bug.cgi?id=183494
-	http://data.gpo.zugaina.org/xmw/media-sound/rbutil/
-
-	1.4.0	 - gentoo bug #183494#c24
-	1.4.0-r1 - revbump of 1.4.0 with EAPI 6
-
  * games-action/minecraft
  ------------------------
 	Original ebuild is coming from java overlay (1.2.1-r5).
