@@ -15,22 +15,27 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
 
-REQUIRED_USE="^^ ( consolekit elogind systemd )"
+REQUIRED_USE="^^ ( consolekit elogind systemd )
+	qt5? ( dbus )"
 IUSE="consolekit +dbus debug elogind +qt5 systemd"
 
 DEPEND="
 	>=dev-libs/boost-1.64.0
 	dev-libs/libevdev
 	virtual/libusb:1
-	sys-apps/dbus
-	qt5? (
-		dev-qt/qtcore:5
-		dev-qt/qtgui:5
-		dev-qt/qtwidgets:5
+	dbus? (
+		sys-apps/dbus
+		x11-libs/libICE
+		x11-libs/libSM
+		x11-libs/libXtst
+		qt5? (
+			dev-qt/qtcore:5
+			dev-qt/qtgui:5
+			dev-qt/qtwidgets:5
+		)
 	)
 	virtual/libudev
-	x11-libs/libICE
-	x11-libs/libSM"
+"
 RDEPEND="
 	acct-group/glogiks
 	acct-user/glogikd
