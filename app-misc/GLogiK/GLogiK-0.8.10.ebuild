@@ -8,27 +8,30 @@ inherit user
 DESCRIPTION="Daemon to handle special features on gaming keyboards"
 HOMEPAGE="https://framagit.org/netfab/GLogiK"
 SRC_URI="https://download.tuxfamily.org/glogik/${P}/${P}.tar.gz"
+RESTRICT="mirror"
 
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
 
 REQUIRED_USE="^^ ( consolekit elogind systemd )"
-IUSE="consolekit debug elogind +qt5 systemd"
+IUSE="consolekit debug elogind +gui systemd"
 
 DEPEND="
 	>=dev-libs/boost-1.64.0
 	dev-libs/libevdev
 	virtual/libusb:1
 	sys-apps/dbus
-	qt5? (
+	gui? (
 		dev-qt/qtcore:5
 		dev-qt/qtgui:5
 		dev-qt/qtwidgets:5
 	)
 	virtual/libudev
 	x11-libs/libICE
-	x11-libs/libSM"
+	x11-libs/libSM
+	x11-libs/libX11
+	x11-libs/libXtst"
 RDEPEND="
 	acct-group/glogiks
 	acct-user/glogikd
@@ -42,7 +45,7 @@ DOCS=( AUTHORS COPYING ChangeLog NEWS VERSION README )
 src_configure() {
 	econf \
 		$(use_enable debug) \
-		$(use_enable qt5)
+		$(use_enable gui qt5)
 }
 
 pkg_postinst() {
