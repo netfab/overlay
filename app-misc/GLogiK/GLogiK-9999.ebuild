@@ -16,8 +16,8 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 REQUIRED_USE="^^ ( consolekit elogind systemd )
-	qt5? ( dbus )"
-IUSE="consolekit +dbus debug elogind +qt5 systemd"
+	gui? ( dbus )"
+IUSE="consolekit +dbus debug elogind +gui systemd"
 
 DEPEND="
 	>=dev-libs/boost-1.64.0
@@ -27,8 +27,9 @@ DEPEND="
 		sys-apps/dbus
 		x11-libs/libICE
 		x11-libs/libSM
+		x11-libs/libX11
 		x11-libs/libXtst
-		qt5? (
+		gui? (
 			dev-qt/qtcore:5
 			dev-qt/qtgui:5
 			dev-qt/qtwidgets:5
@@ -55,7 +56,7 @@ src_configure() {
 	econf \
 		$(use_enable dbus) \
 		$(use_enable debug) \
-		$(use_enable qt5) \
+		$(use_enable gui qt5) \
 		${EXTRA_ECONF}
 }
 
