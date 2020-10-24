@@ -18,7 +18,6 @@ Supported devices :
 	* Logitech G510s Gaming Keyboard - 046d:c22d
 	</longdescription>
 	<use>
-		<flag name="consolekit">consolekit Seat and Session Manager</flag>
 		<flag name="elogind">elogind Seat and Session Manager</flag>
 	</use>
 </pkgmetadata>
