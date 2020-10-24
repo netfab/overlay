@@ -16,6 +16,7 @@
 Daemon to handle special features on gaming keyboards.
 Supported devices :
 	* Logitech G510s Gaming Keyboard - 046d:c22d
+	* Logitech G510s Gaming Keyboard - 046d:c22e (onboard audio enabled)
 	</longdescription>
 	<use>
 		<flag name="elogind">elogind Seat and Session Manager</flag>
