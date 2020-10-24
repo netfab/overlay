@@ -14,8 +14,8 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
 
-REQUIRED_USE="^^ ( consolekit elogind systemd )"
-IUSE="consolekit debug elogind +gui systemd"
+REQUIRED_USE="^^ ( elogind systemd )"
+IUSE="debug elogind +gui systemd"
 
 DEPEND="
 	>=dev-libs/boost-1.64.0
@@ -35,7 +35,6 @@ DEPEND="
 RDEPEND="
 	acct-group/glogiks
 	acct-user/glogikd
-	consolekit? ( >=sys-auth/consolekit-1.1.2 )
 	elogind? ( sys-auth/elogind )
 	systemd? ( sys-apps/systemd )
 	${DEPEND}"
