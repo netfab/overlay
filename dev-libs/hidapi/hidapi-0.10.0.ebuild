@@ -16,8 +16,14 @@ IUSE="doc fox static-libs"
 
 DEPEND="fox? ( x11-libs/fox:= )"
 RDEPEND="${DEPEND}
-	virtual/libusb:1[${MULTILIB_USEDEP}]
-	virtual/libudev:0[${MULTILIB_USEDEP}]"
+	kernel_linux? (
+		virtual/libudev:0[${MULTILIB_USEDEP}]
+		virtual/libusb:1[${MULTILIB_USEDEP}]
+	)
+	kernel_FreeBSD? (
+		virtual/libusb:1[${MULTILIB_USEDEP}]
+	)
+"
 BDEPEND="
 	doc? ( app-doc/doxygen )
 	virtual/pkgconfig"
