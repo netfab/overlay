@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~arm64 ~ppc ~ppc64 ~x86"
 IUSE="doc fox static-libs"
 
-DEPEND="fox? ( x11-libs/fox )"
+DEPEND="fox? ( x11-libs/fox:= )"
 RDEPEND="${DEPEND}
 	virtual/libusb:1[${MULTILIB_USEDEP}]
 	virtual/libudev:0[${MULTILIB_USEDEP}]"
