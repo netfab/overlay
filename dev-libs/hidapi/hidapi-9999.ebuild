@@ -15,7 +15,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~arm64 ~ppc ~ppc64 ~x86"
 IUSE="doc fox static-libs"
 
-RDEPEND="
+DEPEND="fox? ( x11-libs/fox:= )"
+RDEPEND="${DEPEND}
 	kernel_linux? (
 		virtual/libudev:0[${MULTILIB_USEDEP}]
 		virtual/libusb:1[${MULTILIB_USEDEP}]
@@ -24,17 +25,12 @@ RDEPEND="
 		virtual/libusb:1[${MULTILIB_USEDEP}]
 	)
 "
-DEPEND="${RDEPEND}
+BDEPEND="
 	doc? ( app-doc/doxygen )
-	virtual/pkgconfig
-	fox? ( x11-libs/fox )"
+	virtual/pkgconfig"
 
 src_prepare() {
 	default
-
-	if ! use fox; then
-		sed -i -e 's:PKG_CHECK_MODULES(\[fox\], .*):AC_SUBST(fox_CFLAGS,[ ])AC_SUBST(fox_LIBS,[ ]):' configure.ac || die
-	fi
 
 	# Fix bashisms in the configure.ac file.
 	sed -i -e 's:\([A-Z_]\+\)+="\(.*\)":\1="${\1}\2":g' \
