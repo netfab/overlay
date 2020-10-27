@@ -19,6 +19,7 @@ Supported devices :
 	* Logitech G510s Gaming Keyboard - 046d:c22e (onboard audio enabled)
 	</longdescription>
 	<use>
-		<flag name="elogind">elogind Seat and Session Manager</flag>
+		<flag name="hidapi">Use <pkg>dev-libs/hidapi</pkg> for USB device communication</flag>
+		<flag name="libusb">Use <pkg>virtual/libusb</pkg> for USB device communication</flag>
 	</use>
 </pkgmetadata>

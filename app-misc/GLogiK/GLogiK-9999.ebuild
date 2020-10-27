@@ -15,14 +15,18 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
 
-REQUIRED_USE="^^ ( elogind systemd )
-	gui? ( dbus )"
-IUSE="+dbus debug elogind +gui systemd"
+REQUIRED_USE="
+	^^ ( elogind systemd )
+	^^ ( hidapi libusb )
+	gui? ( dbus )
+"
+IUSE="+dbus debug elogind +gui +hidapi libusb systemd"
 
 DEPEND="
 	>=dev-libs/boost-1.64.0
 	dev-libs/libevdev
-	virtual/libusb:1
+	hidapi? ( >=dev-libs/hidapi-0.10.0 )
+	libusb? ( virtual/libusb:1 )
 	dbus? (
 		sys-apps/dbus
 		x11-libs/libICE
@@ -56,6 +60,8 @@ src_configure() {
 		$(use_enable dbus) \
 		$(use_enable debug) \
 		$(use_enable gui qt5) \
+		$(use_enable hidapi) \
+		$(use_enable libusb) \
 		${EXTRA_ECONF}
 }
 
