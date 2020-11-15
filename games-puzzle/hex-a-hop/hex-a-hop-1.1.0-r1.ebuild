@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit autotools
+inherit autotools desktop
 
 DESCRIPTION="a hexagonal tile-based puzzle game"
 HOMEPAGE="http://hexahop.sourceforge.net/"
