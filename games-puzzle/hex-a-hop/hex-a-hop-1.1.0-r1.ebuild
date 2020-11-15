@@ -1,9 +1,9 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="6"
+EAPI=7
 
-inherit autotools eutils
+inherit autotools
 
 DESCRIPTION="a hexagonal tile-based puzzle game"
 HOMEPAGE="http://hexahop.sourceforge.net/"
@@ -22,6 +22,8 @@ RDEPEND="media-libs/libsdl
 DEPEND="${RDEPEND}"
 
 src_prepare() {
+	default
+
 	# fix build system (ideally should be committed upstream)
 	sed -i \
 		-e 's/debug=no/debug=$enableval/' \
@@ -29,8 +31,6 @@ src_prepare() {
 		-e 's/ttf=no/ttf=$enableval/' \
 		-e 's/relative=yes/relative=$enableval/' \
 		configure.ac || die "sed failure"
-
-	eapply_user
 
 	mkdir msc/m4 || die "mkdir failure"
 	eautoreconf
