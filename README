@@ -2,19 +2,6 @@
 List of ebuilds :
 =================
 
- * games-action/minecraft
- ------------------------
-	Original ebuild is coming from java overlay (1.2.1-r5).
-	Then, it was updated in chaos overlay (1.2.4).
-	And updated again here with 1.6.84 ebuild.
-
-	Missing dependencies are currently in java-overlay.
-
-	https://bugs.gentoo.org/343197
-	https://github.com/gentoo/java-overlay
-	https://github.com/chaoskagami/chaos-overlay
-
-
  * games-util/joystickwake
  -------------------------
 	https://github.com/foresto/joystickwake
