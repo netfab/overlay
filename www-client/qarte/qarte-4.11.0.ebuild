@@ -21,7 +21,7 @@ else
 	RESTRICT="mirror"
 fi
 
-inherit desktop l10n python-r1
+inherit desktop plocale python-r1
 
 DESCRIPTION="Qarte is a recorder for Arte+7 and Arte Live Web"
 HOMEPAGE="https://launchpad.net/qarte"
@@ -43,9 +43,9 @@ src_prepare() {
 	default
 
 	if [[ ${PV} = 9999 ]]; then
-		l10n_find_plocales_changes "${S}/i18n" "" ".po"
+		plocale_find_changes "${S}/i18n" "" ".po"
 	else
-		l10n_find_plocales_changes "${S}/locale" "" ""
+		plocale_find_changes "${S}/locale" "" ""
 	fi
 }
 
@@ -74,5 +74,5 @@ src_install() {
 		fi
 	}
 
-	l10n_for_each_locale_do install_locale
+	plocale_for_each_locale install_locale
 }
