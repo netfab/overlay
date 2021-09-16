@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -17,16 +17,14 @@ KEYWORDS="~amd64"
 
 REQUIRED_USE="
 	^^ ( elogind systemd )
-	^^ ( hidapi libusb )
 	gui? ( dbus )
 "
-IUSE="+dbus debug elogind +gui +hidapi libusb systemd"
+IUSE="+dbus debug elogind +gui +hidapi systemd"
 
 DEPEND="
 	>=dev-libs/boost-1.64.0
 	dev-libs/libevdev
 	hidapi? ( >=dev-libs/hidapi-0.10.0 )
-	libusb? ( virtual/libusb:1 )
 	dbus? (
 		sys-apps/dbus
 		x11-libs/libICE
@@ -40,6 +38,7 @@ DEPEND="
 		)
 	)
 	virtual/libudev
+	virtual/libusb:1
 "
 RDEPEND="
 	acct-group/glogiks
@@ -61,7 +60,6 @@ src_configure() {
 		$(use_enable debug) \
 		$(use_enable gui qt5) \
 		$(use_enable hidapi) \
-		$(use_enable libusb) \
 		${EXTRA_ECONF}
 }
 
