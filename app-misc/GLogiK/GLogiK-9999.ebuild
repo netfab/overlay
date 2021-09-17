@@ -6,7 +6,7 @@ EAPI=7
 EGIT_REPO_URI="https://framagit.org/netfab/GLogiK.git/"
 EGIT_BRANCH="dev"
 
-inherit autotools git-r3
+inherit autotools git-r3 tmpfiles
 
 DESCRIPTION="Daemon to handle special features on gaming keyboards"
 HOMEPAGE="https://framagit.org/netfab/GLogiK"
@@ -63,6 +63,14 @@ src_configure() {
 		${EXTRA_ECONF}
 }
 
+src_install() {
+	default
+
+	if use debug ; then
+		dotmpfiles data/tmpfiles.d/GLogiK.conf
+	fi
+}
+
 pkg_postinst() {
 	elog "Users who wants to use the GLogiKs desktop service must be in the glogiks group."
 	elog "See https://wiki.gentoo.org/wiki/Knowledge_Base:Adding_a_user_to_a_group"
@@ -71,4 +79,8 @@ pkg_postinst() {
 	elog "you may need to reload the DBus daemon configuration :"
 	elog	"(openRC users)"
 	elog "   # /etc/init.d/dbus reload"
+
+	if use debug ; then
+		tmpfiles_process GLogiK.conf
+	fi
 }
