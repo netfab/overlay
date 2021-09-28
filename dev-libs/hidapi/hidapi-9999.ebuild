@@ -3,11 +3,17 @@
 
 EAPI=7
 
-EGIT_REPO_URI="https://github.com/libusb/hidapi"
+if [[ ${PV} = "9999" ]]; then
+	EGIT_REPO_URI="https://github.com/libusb/hidapi"
+	inherit git-r3
+else
+	SRC_URI="https://github.com/libusb/${PN}/archive/${P}.tar.gz"
+	S="${WORKDIR}/${PN}-${P}"
+fi
 
 CMAKE_ECLASS=cmake
 
-inherit cmake-multilib git-r3
+inherit cmake-multilib
 
 DESCRIPTION="A multi-platform library for USB and Bluetooth HID-Class devices"
 HOMEPAGE="https://github.com/libusb/hidapi"
