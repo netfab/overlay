@@ -69,6 +69,8 @@ src_install() {
 	if use debug ; then
 		dotmpfiles data/tmpfiles.d/GLogiK.conf
 	fi
+
+	find "${ED}" -name '*.la' -delete || die
 }
 
 pkg_postinst() {
