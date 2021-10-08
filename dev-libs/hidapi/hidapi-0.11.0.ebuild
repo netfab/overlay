@@ -3,7 +3,7 @@
 
 EAPI=7
 
-if [[ ${PV} = "9999" ]]; then
+if [[ ${PV} == "9999" ]]; then
 	EGIT_REPO_URI="https://github.com/libusb/hidapi"
 	inherit git-r3
 else
