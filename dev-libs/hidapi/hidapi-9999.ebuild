@@ -9,6 +9,7 @@ if [[ ${PV} == "9999" ]]; then
 else
 	SRC_URI="https://github.com/libusb/${PN}/archive/${P}.tar.gz"
 	S="${WORKDIR}/${PN}-${P}"
+	KEYWORDS="~amd64 ~arm ~arm64 ~ppc ~ppc64 ~x86"
 fi
 
 CMAKE_ECLASS=cmake
@@ -20,7 +21,6 @@ HOMEPAGE="https://github.com/libusb/hidapi"
 
 LICENSE="|| ( BSD GPL-3 HIDAPI )"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm64 ~ppc ~ppc64 ~x86"
 IUSE="doc"
 
 DEPEND=""
