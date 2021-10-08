@@ -11,6 +11,7 @@ if [[ ${PV} == "9999" ]]; then
 else
 	RESTRICT="mirror"
 	SRC_URI="https://github.com/foresto/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+	KEYWORDS="~amd64"
 fi
 
 inherit distutils-r1
@@ -20,7 +21,6 @@ HOMEPAGE="https://github.com/foresto/joystickwake"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND="dev-python/pyudev[${PYTHON_USEDEP}]"
