@@ -1,7 +1,7 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 inherit autotools multilib-minimal
 
@@ -16,13 +16,8 @@ IUSE="doc fox static-libs"
 
 DEPEND="fox? ( x11-libs/fox:= )"
 RDEPEND="${DEPEND}
-	kernel_linux? (
-		virtual/libudev:0[${MULTILIB_USEDEP}]
-		virtual/libusb:1[${MULTILIB_USEDEP}]
-	)
-	kernel_FreeBSD? (
-		virtual/libusb:1[${MULTILIB_USEDEP}]
-	)
+	virtual/libudev:0[${MULTILIB_USEDEP}]
+	virtual/libusb:1[${MULTILIB_USEDEP}]
 "
 BDEPEND="
 	doc? ( app-doc/doxygen )
@@ -32,6 +27,10 @@ S="${WORKDIR}/${PN}-${P}"
 
 src_prepare() {
 	default
+
+	# Fix build with autoconf 2.70
+	# https://github.com/libusb/hidapi/commit/d15d594
+	sed -i '16d' configure.ac || die
 
 	# Fix bashisms in the configure.ac file.
 	sed -i -e 's:\([A-Z_]\+\)+="\(.*\)":\1="${\1}\2":g' \
