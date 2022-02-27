@@ -1,18 +1,11 @@
 
-List of ebuilds :
+Some links :
 =================
 
  * games-util/joystickwake
  -------------------------
 	https://github.com/foresto/joystickwake
 	https://bugs.gentoo.org/show_bug.cgi?id=535696
-
-
- * media-video/uvccapture
- ------------------------
-   	http://gpo.zugaina.org/Overlays/ago/media-video/uvccapture
-
-	0.5 - Coming from git.gentoo.org ago's overlay
 
 
  * media-video/vobsub2srt
