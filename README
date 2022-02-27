@@ -15,17 +15,6 @@ List of ebuilds :
 	0.5 - Coming from git.gentoo.org ago's overlay
 
 
- * media-video/uvcdynctrl
- ------------------------
-   	https://bugs.gentoo.org/show_bug.cgi?id=303405
-	http://gpo.zugaina.org/Overlays/ago/media-video/uvcdynctrl
-
-	0.2.4 - Also coming git.gentoo.org ago's overlay
-	0.2.6 - Bumped version of 0.2.4
-		0.2.5 src package is in fact 0.2.6 version
-		No way to open an upstream bug ?
-
-
  * media-video/vobsub2srt
  ------------------------
 	https://github.com/ruediger/VobSub2SRT
