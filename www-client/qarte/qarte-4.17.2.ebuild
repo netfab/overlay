@@ -34,6 +34,7 @@ IUSE=""
 RDEPEND="${DEPEND}
 	${PYTHON_DEPS}
 	dev-python/PyQt5[multimedia,svg]
+	>=dev-python/m3u8-2.0.0
 	dev-python/sip
 	dev-qt/qttranslations
 	>=media-video/rtmpdump-2.3
