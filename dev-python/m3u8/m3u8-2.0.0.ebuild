@@ -17,5 +17,5 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND=""
+RDEPEND="dev-python/iso8601"
 BDEPEND=""
