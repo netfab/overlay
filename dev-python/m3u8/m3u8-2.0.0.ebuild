@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_9 )
+PYTHON_COMPAT=( python{3_9,3_10} )
 inherit distutils-r1
 
 DESCRIPTION="python m3u8 parser"
