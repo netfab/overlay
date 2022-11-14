@@ -6,7 +6,7 @@ EAPI=8
 EGIT_REPO_URI="https://framagit.org/netfab/GLogiK.git/"
 EGIT_BRANCH="dev"
 
-inherit autotools git-r3 tmpfiles xdg-utils
+inherit autotools git-r3 tmpfiles udev xdg-utils
 
 DESCRIPTION="Daemon to handle special features on gaming keyboards"
 HOMEPAGE="https://framagit.org/netfab/GLogiK"
@@ -74,6 +74,7 @@ src_install() {
 }
 
 pkg_postinst() {
+	udev_reload
 	xdg_icon_cache_update
 
 	elog "Users who wants to use the GLogiKs desktop service must be in the glogiks group."
@@ -90,5 +91,6 @@ pkg_postinst() {
 }
 
 pkg_postrm() {
+	udev_reload
 	xdg_icon_cache_update
 }
