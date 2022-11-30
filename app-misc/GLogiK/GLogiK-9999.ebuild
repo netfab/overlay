@@ -17,9 +17,11 @@ KEYWORDS="~amd64"
 
 REQUIRED_USE="
 	^^ ( elogind systemd )
+	libnotify? ( notification )
+	notification? ( dbus libnotify )
 	gui? ( dbus )
 "
-IUSE="+dbus debug elogind +gui +hidapi systemd"
+IUSE="+dbus debug elogind +gui +hidapi +notification +libnotify systemd"
 
 DEPEND="
 	>=dev-libs/boost-1.64.0
@@ -37,6 +39,7 @@ DEPEND="
 			dev-qt/qtwidgets:5
 		)
 	)
+	notification? ( libnotify? ( >=x11-libs/libnotify-0.8.1 ) )
 	virtual/libudev
 	virtual/libusb:1
 "
@@ -58,6 +61,8 @@ src_configure() {
 	econf \
 		$(use_enable dbus) \
 		$(use_enable debug) \
+		$(use_enable notification notifications) \
+		$(use_enable libnotify) \
 		$(use_enable gui qt5) \
 		$(use_enable hidapi) \
 		${EXTRA_ECONF}

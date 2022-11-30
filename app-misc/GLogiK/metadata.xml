@@ -21,5 +21,6 @@ Supported devices :
 	<use>
 		<flag name="hidapi">Use <pkg>dev-libs/hidapi</pkg> for USB device communication</flag>
 		<flag name="libusb">Use <pkg>virtual/libusb</pkg> for USB device communication</flag>
+		<flag name="notification">Enable notification on the desktop in connection with USE=libnotify</flag>
 	</use>
 </pkgmetadata>
