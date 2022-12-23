@@ -6,7 +6,7 @@ EAPI=8
 EGIT_REPO_URI="https://framagit.org/netfab/GLogiK.git/"
 EGIT_BRANCH="dev"
 
-inherit autotools git-r3 tmpfiles udev xdg-utils
+inherit autotools git-r3 tmpfiles qmake-utils udev xdg-utils
 
 DESCRIPTION="Daemon to handle special features on gaming keyboards"
 HOMEPAGE="https://framagit.org/netfab/GLogiK"
@@ -58,6 +58,8 @@ src_prepare() {
 }
 
 src_configure() {
+	export PATH="$(qt5_get_bindir):${PATH}"
+
 	econf \
 		$(use_enable dbus) \
 		$(use_enable debug) \
