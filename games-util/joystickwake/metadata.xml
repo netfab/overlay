@@ -2,10 +2,11 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 <!-- maintainer-needed -->
-  <upstream>
-    <maintainer status="active">
-      <name>foresto</name>
-    </maintainer>
-    <bugs-to>https://github.com/foresto/joystickwake/issues</bugs-to>
-  </upstream>
+	<upstream>
+		<maintainer status="active">
+			<name>foresto</name>
+		</maintainer>
+		<bugs-to>https://github.com/foresto/joystickwake/issues</bugs-to>
+		<remote-id type="github">foresto/joystickwake</remote-id>
+	</upstream>
 </pkgmetadata>
