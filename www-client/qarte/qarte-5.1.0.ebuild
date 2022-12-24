@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
-PYTHON_COMPAT=( python{3_8,3_9,3_10} )
+PYTHON_COMPAT=( python3_{8..11} )
 
 PLOCALES="de fr pt"
 
@@ -11,17 +11,18 @@ if [[ ${PV} = 9999 ]]; then
 	# bzr eclass removed
 	# https://bugs.gentoo.org/719892
 	inherit bzr
-	KEYWORDS=""
 	SRC_URI=""
 	DEPEND="sys-devel/gettext"
 else
-	KEYWORDS="~amd64 ~x86"
 	SRC_URI="https://www.oqapy.eu/releases/${P}.tar.gz"
 	DEPEND=""
 	RESTRICT="mirror"
 fi
 
 inherit desktop plocale python-r1
+
+KEYWORDS="~amd64 ~x86"
+REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 DESCRIPTION="Qarte is a recorder for Arte+7 and Arte Live Web"
 HOMEPAGE="https://launchpad.net/qarte"
