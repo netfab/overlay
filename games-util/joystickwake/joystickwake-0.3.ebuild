@@ -1,9 +1,9 @@
 # Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-PYTHON_COMPAT=( python{3_8,3_9,3_10} )
+PYTHON_COMPAT=( python3_{8..11} )
 
 if [[ ${PV} == "9999" ]]; then
 	EGIT_REPO_URI="https://github.com/foresto/joystickwake.git"
