@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<!-- maintainer-needed -->
+	<upstream>
+		<maintainer status="active">
+			<name>VinsS</name>
+		</maintainer>
+		<bugs-to>https://bugs.launchpad.net/qarte/+filebug</bugs-to>
+		<remote-id type="launchpad">qarte</remote-id>
+	</upstream>
+</pkgmetadata>
