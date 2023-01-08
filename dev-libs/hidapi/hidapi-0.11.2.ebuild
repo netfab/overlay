@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -23,11 +23,11 @@ LICENSE="|| ( BSD GPL-3 HIDAPI )"
 SLOT="0"
 IUSE="doc"
 
-DEPEND=""
-RDEPEND="${DEPEND}
+DEPEND="
 	virtual/libudev:0[${MULTILIB_USEDEP}]
 	virtual/libusb:1[${MULTILIB_USEDEP}]
 "
+RDEPEND="${DEPEND}"
 BDEPEND="
 	doc? ( app-doc/doxygen )
 "
@@ -35,16 +35,28 @@ BDEPEND="
 multilib_src_compile() {
 	cmake_src_compile
 
-	if multilib_is_native_abi && use doc; then
-		doxygen "${S}"/doxygen/Doxyfile || die
+	if use doc && multilib_is_native_abi; then
+		local doxyfile="${S}/doxygen/Doxyfile"
+		local reldir="${PN}-${P}"
+		if [[ ${PV} == "9999" ]]; then
+			reldir="${P}"
+		fi
+
+		# INPUT     fix sources directory
+		# RECURSIVE generate also API documentation
+		sed -i \
+			-e 's/^INPUT .*/INPUT=..\/'${reldir}'/g' \
+			-e 's/^RECURSIVE .*/RECURSIVE=YES/g' \
+			${doxyfile} || die "Sed broke!"
+		doxygen ${doxyfile} || die
 	fi
 }
 
 multilib_src_install() {
 	cmake_src_install
 
-	if multilib_is_native_abi && use doc; then
-		docinto html
-		dodoc -r html/.
+	if use doc && multilib_is_native_abi; then
+		local HTML_DOCS=( html/. )
 	fi
+	einstalldocs
 }
