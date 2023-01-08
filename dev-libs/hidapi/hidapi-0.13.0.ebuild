@@ -37,10 +37,15 @@ multilib_src_compile() {
 
 	if use doc && multilib_is_native_abi; then
 		local doxyfile="${S}/doxygen/Doxyfile"
+		local reldir="${PN}-${P}"
+		if [[ ${PV} == "9999" ]]; then
+			reldir="${P}"
+		fi
+
 		# INPUT     fix sources directory
 		# RECURSIVE generate also API documentation
 		sed -i \
-			-e 's/^INPUT .*/INPUT=..\/'${PN}'-'${P}'/g' \
+			-e 's/^INPUT .*/INPUT=..\/'${reldir}'/g' \
 			-e 's/^RECURSIVE .*/RECURSIVE=YES/g' \
 			${doxyfile} || die "Sed broke!"
 		doxygen ${doxyfile} || die
