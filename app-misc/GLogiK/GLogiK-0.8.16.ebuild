@@ -21,7 +21,7 @@ REQUIRED_USE="
 IUSE="+dbus debug elogind +gui +hidapi systemd"
 
 DEPEND="
-	>=dev-libs/boost-1.64.0
+	dev-libs/boost:=
 	hidapi? ( >=dev-libs/hidapi-0.10.0 )
 	dbus? (
 		dev-libs/libevdev
