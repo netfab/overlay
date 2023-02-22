@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -50,7 +50,7 @@ RDEPEND="
 	systemd? ( sys-apps/systemd )
 	${DEPEND}"
 
-DOCS=( AUTHORS COPYING ChangeLog NEWS.md VERSION README.md )
+DOCS=()
 
 src_prepare() {
 	default
@@ -67,6 +67,7 @@ src_configure() {
 		$(use_enable libnotify) \
 		$(use_enable gui qt5) \
 		$(use_enable hidapi) \
+		--docdir="${EPREFIX}/usr/share/doc/${PF}" \
 		${EXTRA_ECONF}
 }
 
@@ -78,6 +79,10 @@ src_install() {
 	fi
 
 	find "${ED}" -name '*.la' -delete || die
+
+	if use gui ; then
+		docompress -x "${EPREFIX}/usr/share/doc/${PF}/COPYING"
+	fi
 }
 
 pkg_postinst() {
