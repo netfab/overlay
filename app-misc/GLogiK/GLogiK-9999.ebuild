@@ -45,7 +45,7 @@ DEPEND="
 "
 RDEPEND="
 	acct-group/glogiks
-	acct-user/glogikd
+	>=acct-user/glogikd-1
 	elogind? ( sys-auth/elogind )
 	systemd? ( sys-apps/systemd )
 	${DEPEND}"
