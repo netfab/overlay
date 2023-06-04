@@ -74,13 +74,16 @@ src_configure() {
 src_install() {
 	default
 
+	doinitd "${S}"/data/init/openrc/glogikd
+
 	if use debug ; then
 		dotmpfiles data/tmpfiles.d/GLogiK.conf
 	fi
 
-	find "${ED}" -name '*.la' -delete || die
+	find "${ED}" -name '*.la' -delete || die '*.la files delete failure'
 
 	if use gui ; then
+		# do NOT compress license file (must be readable by qt5 gui application)
 		docompress -x "${EPREFIX}/usr/share/doc/${PF}/COPYING"
 	fi
 }
