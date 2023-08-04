@@ -3,7 +3,8 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{9..11} )
+DISTUTILS_USE_PEP517=setuptools
+PYTHON_COMPAT=( python3_{10..11} )
 
 if [[ ${PV} == "9999" ]]; then
 	EGIT_REPO_URI="https://github.com/foresto/joystickwake.git"
@@ -23,6 +24,12 @@ LICENSE="MIT"
 SLOT="0"
 IUSE=""
 
-RDEPEND="dev-python/pyudev[${PYTHON_USEDEP}]"
+# dbus-next and python-xlib are not mandatory (just recommended),
+# but should we introduce useflag for this ?
+RDEPEND="
+	dev-python/dbus-next[${PYTHON_USEDEP}]
+	dev-python/python-xlib[${PYTHON_USEDEP}]
+	dev-python/pyudev[${PYTHON_USEDEP}]
+"
 
 DOCS=( LICENSE README.rst )
