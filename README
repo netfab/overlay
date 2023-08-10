@@ -17,6 +17,4 @@ Some links/comments :
  * x11-apps/xpointerbarrier
  --------------------------
 	https://www.uninformativ.de/git/xpointerbarrier/file/README.html
-
-Ebuild shamelessly copied from https://github.com/cstew2/cstew-overlay.
-
+	(ebuild shamelessly copied from https://github.com/cstew2/cstew-overlay)
