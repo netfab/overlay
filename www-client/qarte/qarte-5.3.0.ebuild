@@ -37,7 +37,7 @@ RDEPEND="${DEPEND}
 	dev-python/PyQt5[multimedia,svg]
 	>=dev-python/m3u8-2.0.0
 	dev-python/sip
-	dev-qt/qttranslations
+	dev-qt/qttranslations:5
 	>=media-video/rtmpdump-2.3
 	virtual/cron"
 
