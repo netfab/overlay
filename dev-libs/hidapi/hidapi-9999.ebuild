@@ -37,7 +37,7 @@ multilib_src_compile() {
 
 	if use doc && multilib_is_native_abi; then
 		cd "${S}/doxygen"
-		doxygen ${doxyfile} || die
+		doxygen Doxyfile || die
 	fi
 }
 
