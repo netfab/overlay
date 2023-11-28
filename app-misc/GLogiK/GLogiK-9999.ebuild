@@ -13,7 +13,7 @@ HOMEPAGE="https://framagit.org/netfab/GLogiK"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS=""
 
 REQUIRED_USE="
 	^^ ( elogind systemd )
