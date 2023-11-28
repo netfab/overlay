@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<!-- maintainer-needed -->
+	<upstream>
+		<maintainer status="active">
+			<name>Marcin Kurczewski</name>
+		</maintainer>
+		<bugs-to>https://github.com/LostArtefacts/TR1X/issues</bugs-to>
+		<remote-id type="github">LostArtefacts/TR1X</remote-id>
+	</upstream>
+</pkgmetadata>
