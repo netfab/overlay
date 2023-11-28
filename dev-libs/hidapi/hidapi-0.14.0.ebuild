@@ -12,8 +12,6 @@ else
 	KEYWORDS="~amd64 ~arm ~arm64 ~ppc ~ppc64 ~x86"
 fi
 
-CMAKE_ECLASS=cmake
-
 inherit cmake-multilib
 
 DESCRIPTION="A multi-platform library for USB and Bluetooth HID-Class devices"
