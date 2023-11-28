@@ -1,7 +1,7 @@
 # Copyright 1999-2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="6"
+EAPI="8"
 
 if [[ "${PV}" == "9999" ]]; then
 	EGIT_REPO_URI="https://github.com/netfab/libg15"
@@ -37,4 +37,3 @@ multilib_src_configure() {
 	ECONF_SOURCE="${S}" econf \
 		--disable-static
 }
-
