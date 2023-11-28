@@ -10,14 +10,14 @@ EGIT_REPO_URI="https://www.uninformativ.de/git/xpointerbarrier.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS=""
 IUSE=""
 
+DEPEND=""
 RDEPEND="x11-libs/libX11
 		 x11-libs/libXfixes
-		 x11-libs/libXrandr"
-DEPEND="${RDEPEND}
-	   "
+		 x11-libs/libXrandr
+		 ${DEPEND}"
 
 #PATCHES=( "${FILESDIR}/ldflags_fix.patch" )
 
