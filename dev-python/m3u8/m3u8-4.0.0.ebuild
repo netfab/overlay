@@ -17,3 +17,5 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND="dev-python/iso8601"
+
+distutils_enable_tests pytest
