@@ -19,18 +19,6 @@ RDEPEND="x11-libs/libX11
 		 x11-libs/libXrandr
 		 ${DEPEND}"
 
-#PATCHES=( "${FILESDIR}/ldflags_fix.patch" )
-
-src_prepare() {
-	default
-
-	# fix linking
-	sed -i \
-		-e 's/$(CFLAGS)/$(CFLAGS) $</' \
-		-e 's/$@ $</$@/' \
-		Makefile || die "Sed broke!"
-}
-
 src_install() {
 	emake prefix=/usr DESTDIR="${D}" install
 }
