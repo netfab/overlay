@@ -32,16 +32,14 @@ BDEPEND=""
 src_configure() {
 	local emesonargs=(
 		-Dstaticdeps=false
+		--bindir=/usr/share/${P}
 	)
 	meson_src_configure
 }
 
 src_install() {
-	exeinto /usr/share/${P}
-	doexe "${BUILD_DIR}"/TR1X
-
 	insinto /usr/share/${P}
-	doins -r "${S}"/bin/.
+	doins -r "${S}"/data/ship/.
 
 	meson_src_install
 }
