@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{8..12} )
+PYTHON_COMPAT=( python3_{10..12} )
 
 EGIT_REPO_URI="https://github.com/LostArtefacts/TR1X"
 EGIT_BRANCH="develop"
