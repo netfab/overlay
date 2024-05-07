@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -21,7 +21,7 @@ REQUIRED_USE="
 	notification? ( dbus libnotify )
 	gui? ( dbus )
 "
-IUSE="+dbus debug elogind +gui +hidapi +notification +libnotify systemd"
+IUSE="+dbus debug elogind +gui +hidapi +libnotify +notification +qt6 systemd"
 
 DEPEND="
 	dev-libs/boost:=
@@ -34,9 +34,14 @@ DEPEND="
 		x11-libs/libX11
 		x11-libs/libXtst
 		gui? (
-			dev-qt/qtcore:5
-			dev-qt/qtgui:5
-			dev-qt/qtwidgets:5
+			!qt6? (
+				dev-qt/qtcore:5
+				dev-qt/qtgui:5
+				dev-qt/qtwidgets:5
+			)
+			qt6? (
+				dev-qt/qtbase:6[gui,widgets]
+			)
 		)
 	)
 	notification? ( libnotify? ( >=x11-libs/libnotify-0.8.1 ) )
@@ -58,17 +63,30 @@ src_prepare() {
 }
 
 src_configure() {
-	export PATH="$(qt5_get_bindir):${PATH}"
-
-	econf \
-		$(use_enable dbus) \
-		$(use_enable debug) \
-		$(use_enable notification notifications) \
-		$(use_enable libnotify) \
-		$(use_enable gui qt5) \
-		$(use_enable hidapi) \
-		--docdir="${EPREFIX}/usr/share/doc/${PF}" \
+	local myeconfargs=(
+		$(use_enable dbus)
+		$(use_enable debug)
+		$(use_enable notification notifications)
+		$(use_enable libnotify)
+		$(use_enable hidapi)
+		--docdir="${EPREFIX}/usr/share/doc/${PF}"
 		${EXTRA_ECONF}
+	)
+	if use qt6; then
+		export PATH="$(qt6_get_bindir):${PATH}"
+		myeconfargs+=(
+			--enable-qt6
+			--disable-qt5
+		)
+	else
+		export PATH="$(qt5_get_bindir):${PATH}"
+		myeconfargs+=(
+			--disable-qt6
+			--enable-qt5
+		)
+	fi
+
+	econf "${myeconfargs[@]}"
 }
 
 src_install() {
