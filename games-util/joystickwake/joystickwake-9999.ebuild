@@ -22,10 +22,8 @@ HOMEPAGE="https://github.com/foresto/joystickwake"
 
 LICENSE="MIT"
 SLOT="0"
-IUSE=""
 
-# dbus-next and python-xlib are not mandatory (just recommended),
-# but should we introduce useflag for this ?
+# dbus-next and python-xlib are not mandatory (just recommended)
 RDEPEND="
 	dev-python/dbus-next[${PYTHON_USEDEP}]
 	dev-python/python-xlib[${PYTHON_USEDEP}]
