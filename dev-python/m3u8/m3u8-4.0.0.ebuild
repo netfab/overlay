@@ -10,11 +10,12 @@ inherit distutils-r1
 DESCRIPTION="python m3u8 parser"
 HOMEPAGE="https://pypi.org/project/m3u8/"
 SRC_URI="https://pypi.io/packages/source/${PN:0:1}/${PN}/${P}.tar.gz"
-RESTRICT="mirror"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+
+RESTRICT="mirror"
 
 RDEPEND="dev-python/iso8601"
 
