@@ -3,15 +3,17 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{10..12} )
+PYTHON_COMPAT=( python3_{10..13} )
 
-EGIT_REPO_URI="https://github.com/LostArtefacts/TR1X"
+EGIT_REPO_URI="https://github.com/LostArtefacts/TRX"
 EGIT_BRANCH="develop"
 
 inherit git-r3 meson python-r1
 
-DESCRIPTION="open source implementation of the classic Tomb Raider I game (1996)"
-HOMEPAGE="https://github.com/LostArtefacts/TR1X"
+DESCRIPTION="open source re-implementation of Tomb Raider I game"
+HOMEPAGE="https://github.com/LostArtefacts/TRX"
+
+TRX_GAME="tr1"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -20,6 +22,7 @@ KEYWORDS=""
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 DEPEND="
+	>=dev-libs/uthash-2.3.0
 	dev-python/json5[${PYTHON_USEDEP}]
 	media-libs/libsdl2
 	media-video/ffmpeg
@@ -29,9 +32,17 @@ RDEPEND="
 	${PYTHON_DEPS}"
 BDEPEND=""
 
+PATCHES=(
+	# https://github.com/LostArtefacts/TRX/pull/1856
+	"${FILESDIR}/${P}-libtrx-fix-utash.patch"
+)
+
 src_configure() {
+	local EMESON_SOURCE="${S}/src/${TRX_GAME}"
+
 	local emesonargs=(
 		-Dstaticdeps=false
+		-Dsubprojects=false
 		--bindir=/usr/share/${P}
 	)
 	meson_src_configure
@@ -39,7 +50,7 @@ src_configure() {
 
 src_install() {
 	insinto /usr/share/${P}
-	doins -r "${S}"/data/ship/.
+	doins -r "${S}"/data/"${TRX_GAME}"/ship/.
 
 	meson_src_install
 }
