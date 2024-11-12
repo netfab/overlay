@@ -1,15 +1,15 @@
 BDEPEND=>=dev-vcs/git-1.8.2.1[curl] >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
 DEFINED_PHASES=compile configure install postinst test unpack
-DEPEND=dev-python/json5[python_targets_python3_10(-)?,python_targets_python3_11(-)?,python_targets_python3_12(-)?] media-libs/libsdl2 media-video/ffmpeg sys-libs/zlib
-DESCRIPTION=open source implementation of the classic Tomb Raider I game (1996)
+DEPEND=>=dev-libs/uthash-2.3.0 dev-python/json5[python_targets_python3_10(-)?,python_targets_python3_11(-)?,python_targets_python3_12(-)?,python_targets_python3_13(-)?] media-libs/libsdl2 media-video/ffmpeg sys-libs/zlib
+DESCRIPTION=open source re-implementation of Tomb Raider I game
 EAPI=8
-HOMEPAGE=https://github.com/LostArtefacts/TR1X
+HOMEPAGE=https://github.com/LostArtefacts/TRX
 INHERIT=git-r3 meson python-r1
-IUSE=python_targets_python3_10 python_targets_python3_11 python_targets_python3_12
+IUSE=python_targets_python3_10 python_targets_python3_11 python_targets_python3_12 python_targets_python3_13
 LICENSE=GPL-3
 PROPERTIES=live
-RDEPEND=dev-python/json5[python_targets_python3_10(-)?,python_targets_python3_11(-)?,python_targets_python3_12(-)?] media-libs/libsdl2 media-video/ffmpeg sys-libs/zlib python_targets_python3_10? ( dev-lang/python:3.10 ) python_targets_python3_11? ( dev-lang/python:3.11 ) python_targets_python3_12? ( dev-lang/python:3.12 )
-REQUIRED_USE=|| ( python_targets_python3_10 python_targets_python3_11 python_targets_python3_12 )
+RDEPEND=>=dev-libs/uthash-2.3.0 dev-python/json5[python_targets_python3_10(-)?,python_targets_python3_11(-)?,python_targets_python3_12(-)?,python_targets_python3_13(-)?] media-libs/libsdl2 media-video/ffmpeg sys-libs/zlib python_targets_python3_10? ( dev-lang/python:3.10 ) python_targets_python3_11? ( dev-lang/python:3.11 ) python_targets_python3_12? ( dev-lang/python:3.12 ) python_targets_python3_13? ( dev-lang/python:3.13 )
+REQUIRED_USE=|| ( python_targets_python3_10 python_targets_python3_11 python_targets_python3_12 python_targets_python3_13 )
 SLOT=0
-_eclasses_=flag-o-matic	f14aba975c94ccaa9f357a27e3b17ffe	git-r3	875eb471682d3e1f18da124be97dcc81	meson	99466844dd8d4fcfb07578a76f5a9922	multibuild	4650a65187015567b4e041bb9bfdb364	multilib	b2a329026f2e404e9e371097dda47f96	multiprocessing	1e32df7deee68372153dca65f4a7c21f	ninja-utils	2df4e452cea39a9ec8fb543ce059f8d6	out-of-source-utils	dbf9e34ee8964084651e25907fa8f52c	python-r1	2def7a4ce233dfa344f613025c619a23	python-utils-r1	2fee95c11e5f883024588d4837db6802	toolchain-funcs	d3d42b22a610ce81c267b644bcec9b87
-_md5_=d4e8539562c4cb1876b21f9b802bb4c8
+_eclasses_=git-r3	875eb471682d3e1f18da124be97dcc81	toolchain-funcs	d3d42b22a610ce81c267b644bcec9b87	multilib	b2a329026f2e404e9e371097dda47f96	flag-o-matic	f14aba975c94ccaa9f357a27e3b17ffe	multiprocessing	1e32df7deee68372153dca65f4a7c21f	ninja-utils	2df4e452cea39a9ec8fb543ce059f8d6	python-utils-r1	2fee95c11e5f883024588d4837db6802	meson	99466844dd8d4fcfb07578a76f5a9922	out-of-source-utils	dbf9e34ee8964084651e25907fa8f52c	multibuild	4650a65187015567b4e041bb9bfdb364	python-r1	2def7a4ce233dfa344f613025c619a23
+_md5_=78560ba8ddebcdfa51335090bdb6fd0c
