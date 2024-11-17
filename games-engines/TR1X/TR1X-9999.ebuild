@@ -30,7 +30,6 @@ DEPEND="
 RDEPEND="
 	${DEPEND}
 	${PYTHON_DEPS}"
-BDEPEND=""
 
 PATCHES=(
 	# https://github.com/LostArtefacts/TRX/pull/1856
