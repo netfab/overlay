@@ -11,17 +11,14 @@ if [[ ${PV} = 9999 ]]; then
 	# bzr eclass removed
 	# https://bugs.gentoo.org/719892
 	inherit bzr
-	SRC_URI=""
 	DEPEND="sys-devel/gettext"
 else
 	SRC_URI="https://www.oqapy.eu/releases/${P}.tar.gz"
-	DEPEND=""
 	RESTRICT="mirror"
 fi
 
 inherit desktop plocale python-r1
 
-KEYWORDS="~amd64 ~x86"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 DESCRIPTION="Qarte is a recorder for Arte+7 and Arte Live Web"
@@ -30,7 +27,7 @@ HOMEPAGE="https://launchpad.net/qarte"
 LICENSE="GPL-3"
 SLOT="0"
 
-IUSE=""
+KEYWORDS="~amd64 ~x86"
 
 RDEPEND="${DEPEND}
 	${PYTHON_DEPS}
