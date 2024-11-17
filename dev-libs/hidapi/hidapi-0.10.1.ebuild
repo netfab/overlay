@@ -9,6 +9,8 @@ DESCRIPTION="A multi-platform library for USB and Bluetooth HID-Class devices"
 HOMEPAGE="https://github.com/libusb/hidapi"
 SRC_URI="https://github.com/libusb/${PN}/archive/${P}.tar.gz"
 
+S="${WORKDIR}/${PN}-${P}"
+
 LICENSE="|| ( BSD GPL-3 HIDAPI )"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~arm64 ~ppc ~ppc64 ~x86"
@@ -20,10 +22,8 @@ RDEPEND="${DEPEND}
 	virtual/libusb:1[${MULTILIB_USEDEP}]
 "
 BDEPEND="
-	doc? ( app-doc/doxygen )
+	doc? ( app-text/doxygen )
 	virtual/pkgconfig"
-
-S="${WORKDIR}/${PN}-${P}"
 
 src_prepare() {
 	default

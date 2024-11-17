@@ -27,7 +27,7 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 BDEPEND="
-	doc? ( app-doc/doxygen )
+	doc? ( app-text/doxygen )
 "
 
 multilib_src_compile() {
