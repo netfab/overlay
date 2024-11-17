@@ -8,7 +8,6 @@ inherit tmpfiles qmake-utils udev xdg-utils
 DESCRIPTION="Daemon to handle special features on gaming keyboards"
 HOMEPAGE="https://framagit.org/netfab/GLogiK"
 SRC_URI="https://download.tuxfamily.org/glogik/${P}/${P}.tar.gz"
-RESTRICT="mirror"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -50,6 +49,8 @@ RDEPEND="
 	${DEPEND}"
 
 DOCS=()
+
+RESTRICT="mirror"
 
 src_configure() {
 	export PATH="$(qt5_get_bindir):${PATH}"
