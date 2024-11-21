@@ -31,17 +31,11 @@ RDEPEND="
 	${DEPEND}
 	${PYTHON_DEPS}"
 
-PATCHES=(
-	# https://github.com/LostArtefacts/TRX/pull/1856
-	"${FILESDIR}/${P}-libtrx-fix-utash.patch"
-)
-
 src_configure() {
 	local EMESON_SOURCE="${S}/src/${TRX_GAME}"
 
 	local emesonargs=(
 		-Dstaticdeps=false
-		-Dsubprojects=false
 		--bindir=/usr/share/${P}
 	)
 	meson_src_configure
