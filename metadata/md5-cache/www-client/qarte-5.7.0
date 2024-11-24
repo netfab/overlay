@@ -6,10 +6,10 @@ INHERIT=desktop plocale python-r1
 IUSE=python_targets_python3_10 python_targets_python3_11 python_targets_python3_12 python_targets_python3_13
 KEYWORDS=~amd64 ~x86
 LICENSE=GPL-3
-RDEPEND=python_targets_python3_10? ( dev-lang/python:3.10 ) python_targets_python3_11? ( dev-lang/python:3.11 ) python_targets_python3_12? ( dev-lang/python:3.12 ) python_targets_python3_13? ( dev-lang/python:3.13 ) dev-python/PyQt5[multimedia,svg] >=dev-python/m3u8-2.0.0 dev-python/sip dev-qt/qttranslations:5 >=media-video/rtmpdump-2.3 virtual/cron
+RDEPEND=python_targets_python3_10? ( dev-lang/python:3.10 ) python_targets_python3_11? ( dev-lang/python:3.11 ) python_targets_python3_12? ( dev-lang/python:3.12 ) python_targets_python3_13? ( dev-lang/python:3.13 ) dev-python/pyqt5[multimedia,svg] >=dev-python/m3u8-2.0.0 dev-python/sip dev-qt/qttranslations:5 >=media-video/rtmpdump-2.3 virtual/cron
 REQUIRED_USE=|| ( python_targets_python3_10 python_targets_python3_11 python_targets_python3_12 python_targets_python3_13 )
 RESTRICT=mirror
 SLOT=0
 SRC_URI=https://www.oqapy.eu/releases/qarte-5.7.0.tar.gz
 _eclasses_=desktop	3a72ffe0d8e1dd73af3a1c8c15a59fed	plocale	950fbaec7deeba41b5bcc0572cca99b9	out-of-source-utils	dbf9e34ee8964084651e25907fa8f52c	multibuild	4650a65187015567b4e041bb9bfdb364	multiprocessing	1e32df7deee68372153dca65f4a7c21f	toolchain-funcs	d3d42b22a610ce81c267b644bcec9b87	multilib	b2a329026f2e404e9e371097dda47f96	python-utils-r1	2fee95c11e5f883024588d4837db6802	python-r1	2def7a4ce233dfa344f613025c619a23
-_md5_=e647c67af058eba30b2f4ed8df94522c
+_md5_=fe585e09cdb9d5ed4ad9e3e063519c6a

@@ -31,7 +31,7 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND="${DEPEND}
 	${PYTHON_DEPS}
-	dev-python/PyQt5[multimedia,svg]
+	dev-python/pyqt5[multimedia,svg]
 	>=dev-python/m3u8-2.0.0
 	dev-python/sip
 	dev-qt/qttranslations:5
