@@ -1,0 +1,16 @@
+BDEPEND=>=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+DEFINED_PHASES=compile configure install postinst test
+DEPEND=>=dev-libs/uthash-2.3.0 dev-python/json5[python_targets_python3_10(-)?,python_targets_python3_11(-)?,python_targets_python3_12(-)?,python_targets_python3_13(-)?] dev-vcs/git media-libs/libsdl2 media-video/ffmpeg sys-libs/zlib
+DESCRIPTION=open source re-implementation of Tomb Raider I game
+EAPI=8
+HOMEPAGE=https://github.com/LostArtefacts/TRX
+INHERIT=meson python-r1
+IUSE=python_targets_python3_10 python_targets_python3_11 python_targets_python3_12 python_targets_python3_13
+LICENSE=GPL-3
+RDEPEND=>=dev-libs/uthash-2.3.0 dev-python/json5[python_targets_python3_10(-)?,python_targets_python3_11(-)?,python_targets_python3_12(-)?,python_targets_python3_13(-)?] dev-vcs/git media-libs/libsdl2 media-video/ffmpeg sys-libs/zlib python_targets_python3_10? ( dev-lang/python:3.10 ) python_targets_python3_11? ( dev-lang/python:3.11 ) python_targets_python3_12? ( dev-lang/python:3.12 ) python_targets_python3_13? ( dev-lang/python:3.13 )
+REQUIRED_USE=|| ( python_targets_python3_10 python_targets_python3_11 python_targets_python3_12 python_targets_python3_13 )
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/LostArtefacts/TRX/archive/refs/tags/tr1-4.7.1.tar.gz -> TR1X-4.7.1.tar.gz
+_eclasses_=toolchain-funcs	14648d8795f7779e11e1bc7cf08b7536	multilib	b2a329026f2e404e9e371097dda47f96	flag-o-matic	f14aba975c94ccaa9f357a27e3b17ffe	multiprocessing	1e32df7deee68372153dca65f4a7c21f	ninja-utils	2df4e452cea39a9ec8fb543ce059f8d6	python-utils-r1	42c5abe4a656a4993a06a4fc61dbdd12	meson	99466844dd8d4fcfb07578a76f5a9922	out-of-source-utils	dbf9e34ee8964084651e25907fa8f52c	multibuild	4650a65187015567b4e041bb9bfdb364	python-r1	2def7a4ce233dfa344f613025c619a23
+_md5_=9c474cf7717b02498602befd297dd09b
