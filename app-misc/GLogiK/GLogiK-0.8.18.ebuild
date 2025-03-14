@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -6,8 +6,8 @@ EAPI=8
 inherit tmpfiles qmake-utils udev xdg-utils
 
 DESCRIPTION="Daemon to handle special features on gaming keyboards"
-HOMEPAGE="https://framagit.org/netfab/GLogiK"
-SRC_URI="https://download.tuxfamily.org/glogik/${P}/${P}.tar.gz"
+HOMEPAGE="https://netfab.frama.io/pages/glogik/"
+SRC_URI="https://framagit.org/netfab/GLogiK/-/archive/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

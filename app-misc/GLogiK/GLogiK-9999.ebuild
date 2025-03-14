@@ -9,7 +9,7 @@ EGIT_BRANCH="dev"
 inherit autotools git-r3 tmpfiles qmake-utils udev xdg-utils
 
 DESCRIPTION="Daemon to handle special features on gaming keyboards"
-HOMEPAGE="https://framagit.org/netfab/GLogiK"
+HOMEPAGE="https://netfab.frama.io/pages/glogik/"
 
 LICENSE="GPL-3"
 SLOT="0"
