@@ -72,17 +72,25 @@ src_configure() {
 		--docdir="${EPREFIX}/usr/share/doc/${PF}"
 		${EXTRA_ECONF}
 	)
-	if use qt6; then
-		export PATH="$(qt6_get_bindir):${PATH}"
-		myeconfargs+=(
-			--enable-qt6
-			--disable-qt5
-		)
+
+	if use gui ; then
+		if use qt6 ; then
+			export PATH="$(qt6_get_bindir):${PATH}"
+			myeconfargs+=(
+				--enable-qt6
+				--disable-qt5
+			)
+		else
+			export PATH="$(qt5_get_bindir):${PATH}"
+			myeconfargs+=(
+				--disable-qt6
+				--enable-qt5
+			)
+		fi
 	else
-		export PATH="$(qt5_get_bindir):${PATH}"
 		myeconfargs+=(
 			--disable-qt6
-			--enable-qt5
+			--disable-qt5
 		)
 	fi
 
