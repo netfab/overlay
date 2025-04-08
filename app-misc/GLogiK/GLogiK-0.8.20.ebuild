@@ -118,13 +118,8 @@ pkg_postinst() {
 	udev_reload
 	xdg_icon_cache_update
 
-	elog "Users who wants to use the GLogiKs desktop service must be in the glogiks group."
+	elog "Users who wants to use the desktop service and the Qt5 GUI must be in the glogiks group."
 	elog "See https://wiki.gentoo.org/wiki/Knowledge_Base:Adding_a_user_to_a_group"
-	elog
-	elog "After adding users to this group, and also after ${PN} installation,"
-	elog "you may need to reload the DBus daemon configuration :"
-	elog	"(openRC users)"
-	elog "   # /etc/init.d/dbus reload"
 
 	if use debug ; then
 		tmpfiles_process GLogiK.conf
