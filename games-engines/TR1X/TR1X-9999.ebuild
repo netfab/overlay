@@ -24,6 +24,7 @@ REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 DEPEND="
 	>=dev-libs/uthash-2.3.0
 	dev-python/json5[${PYTHON_USEDEP}]
+	media-libs/glew
 	media-libs/libsdl2
 	media-video/ffmpeg
 	sys-libs/zlib"
