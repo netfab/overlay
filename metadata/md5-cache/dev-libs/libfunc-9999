@@ -1,0 +1,11 @@
+BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
+DEFINED_PHASES=install unpack
+DESCRIPTION=Small bash functions library
+EAPI=8
+HOMEPAGE=https://framagit.org/netfab/libfunc
+INHERIT=git-r3
+LICENSE=GPL-3
+PROPERTIES=live
+SLOT=0
+_eclasses_=git-r3	875eb471682d3e1f18da124be97dcc81
+_md5_=484af9c5a74384b6ad30a77e381b0818
