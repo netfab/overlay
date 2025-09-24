@@ -1,16 +1,16 @@
 BDEPEND=>=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
 DEFINED_PHASES=compile configure install postinst test
-DEPEND=>=dev-libs/uthash-2.3.0 dev-python/json5[python_targets_python3_10(-)?,python_targets_python3_11(-)?,python_targets_python3_12(-)?,python_targets_python3_13(-)?] dev-vcs/git media-libs/glew media-libs/libsdl2 media-video/ffmpeg sys-libs/zlib
+DEPEND=>=dev-libs/uthash-2.3.0 dev-python/json5[python_targets_python3_11(-)?,python_targets_python3_12(-)?,python_targets_python3_13(-)?] dev-vcs/git media-libs/glew media-libs/libsdl2 media-video/ffmpeg sys-libs/zlib
 DESCRIPTION=open source re-implementation of Tomb Raider I game
 EAPI=8
 HOMEPAGE=https://github.com/LostArtefacts/TRX
 INHERIT=meson python-r1
-IUSE=python_targets_python3_10 python_targets_python3_11 python_targets_python3_12 python_targets_python3_13
+IUSE=python_targets_python3_11 python_targets_python3_12 python_targets_python3_13
 LICENSE=GPL-3
-RDEPEND=>=dev-libs/uthash-2.3.0 dev-python/json5[python_targets_python3_10(-)?,python_targets_python3_11(-)?,python_targets_python3_12(-)?,python_targets_python3_13(-)?] dev-vcs/git media-libs/glew media-libs/libsdl2 media-video/ffmpeg sys-libs/zlib python_targets_python3_10? ( dev-lang/python:3.10 ) python_targets_python3_11? ( dev-lang/python:3.11 ) python_targets_python3_12? ( dev-lang/python:3.12 ) python_targets_python3_13? ( dev-lang/python:3.13 )
-REQUIRED_USE=|| ( python_targets_python3_10 python_targets_python3_11 python_targets_python3_12 python_targets_python3_13 )
+RDEPEND=>=dev-libs/uthash-2.3.0 dev-python/json5[python_targets_python3_11(-)?,python_targets_python3_12(-)?,python_targets_python3_13(-)?] dev-vcs/git media-libs/glew media-libs/libsdl2 media-video/ffmpeg sys-libs/zlib python_targets_python3_11? ( dev-lang/python:3.11 ) python_targets_python3_12? ( dev-lang/python:3.12 ) python_targets_python3_13? ( dev-lang/python:3.13 )
+REQUIRED_USE=|| ( python_targets_python3_11 python_targets_python3_12 python_targets_python3_13 )
 RESTRICT=mirror
 SLOT=0
 SRC_URI=https://github.com/LostArtefacts/TRX/archive/refs/tags/tr1-4.9.tar.gz -> TR1X-4.9.tar.gz
-_eclasses_=toolchain-funcs	f9d71a6efe9d083aec750dd13968e169	flag-o-matic	e8de74bac929ba17427e740e95707d00	multiprocessing	1e32df7deee68372153dca65f4a7c21f	ninja-utils	2df4e452cea39a9ec8fb543ce059f8d6	python-utils-r1	974462533ec80cd68e5f366ad8a86002	meson	99466844dd8d4fcfb07578a76f5a9922	out-of-source-utils	dbf9e34ee8964084651e25907fa8f52c	multibuild	4650a65187015567b4e041bb9bfdb364	python-r1	0e15b2ab9cfc87d7474678201d6bca38
+_eclasses_=flag-o-matic	a7afe42e95fb46ce9691605acfb24672	meson	99466844dd8d4fcfb07578a76f5a9922	multibuild	4650a65187015567b4e041bb9bfdb364	multiprocessing	1e32df7deee68372153dca65f4a7c21f	ninja-utils	2df4e452cea39a9ec8fb543ce059f8d6	out-of-source-utils	dbf9e34ee8964084651e25907fa8f52c	python-r1	0e15b2ab9cfc87d7474678201d6bca38	python-utils-r1	b7eb9c3a6dc6662368634584aab44a2c	toolchain-funcs	a0b29008c671a362b505f96fa80ce9c0
 _md5_=37a6b49dbdaaa9017abf6ed6677a9d88
