@@ -6,7 +6,10 @@
 		<name>Fabrice Delliaux</name>
 	</maintainer>
 	<upstream>
-		<remote-id type="github">netfab/libfunc</remote-id>
-		<bugs-to>https://github.com/netfab/libfunc/issues</bugs-to>
+		<maintainer status="active">
+			<email>netbox253@gmail.com</email>
+			<name>Fabrice Delliaux</name>
+		</maintainer>
+		<bugs-to>https://framagit.org/netfab/libfunc/issues</bugs-to>
 	</upstream>
 </pkgmetadata>
