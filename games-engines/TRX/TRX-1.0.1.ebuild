@@ -7,20 +7,26 @@ LUA_COMPAT=( lua5-{1..4} )
 
 PYTHON_COMPAT=( python3_{10..14} )
 
+if [[ ${PV} = 9999 ]]; then
+	EGIT_REPO_URI="https://github.com/LostArtefacts/TRX"
+	EGIT_BRANCH="develop"
+
+	inherit git-r3
+else
+	SRC_URI="
+		https://github.com/LostArtefacts/TRX/archive/refs/tags/trx-${PV}.tar.gz	-> ${P}.tar.gz"
+	RESTRICT="mirror"
+	S="${WORKDIR}/TRX-trx-${PV}"
+fi
+
 inherit lua-single meson python-r1
 
 DESCRIPTION="Open source re-implementation of Tomb Raider I and Tomb Raider II games"
 HOMEPAGE="https://github.com/LostArtefacts/TRX"
-SRC_URI="
-	https://github.com/LostArtefacts/TRX/archive/refs/tags/trx-${PV}.tar.gz	-> ${P}.tar.gz"
-
-S="${WORKDIR}/TRX-trx-${PV}"
 
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS=""
-
-RESTRICT="mirror"
 
 REQUIRED_USE="${LUA_REQUIRED_USE} ${PYTHON_REQUIRED_USE}"
 
@@ -35,7 +41,8 @@ DEPEND="
 	virtual/zlib"
 RDEPEND="
 	${DEPEND}
-	${PYTHON_DEPS}"
+	${PYTHON_DEPS}
+	~games-engines/TRX-data-9999"
 
 pkg_setup() {
 	lua-single_pkg_setup
