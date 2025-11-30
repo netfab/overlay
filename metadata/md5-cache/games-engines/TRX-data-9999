@@ -1,0 +1,11 @@
+BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
+DEFINED_PHASES=install unpack
+DESCRIPTION=Large binary assets for TRX
+EAPI=8
+HOMEPAGE=https://github.com/LostArtefacts/TRX-data
+INHERIT=git-r3
+LICENSE=GPL-3
+PROPERTIES=live
+SLOT=0
+_eclasses_=git-r3	875eb471682d3e1f18da124be97dcc81
+_md5_=751edbbeb7e3781d244285a7c3162fe9
