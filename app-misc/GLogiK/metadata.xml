@@ -10,7 +10,7 @@
 			<email>netbox253@gmail.com</email>
 			<name>Fabrice Delliaux</name>
 		</maintainer>
-		<bugs-to>https://framagit.org/netfab/GLogiK/issues</bugs-to>
+		<bugs-to>https://framagit.org/netfab/GLogiK/-/issues</bugs-to>
 	</upstream>
 	<longdescription lang="en">
 Daemon to handle special features on gaming keyboards.
