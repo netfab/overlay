@@ -17,7 +17,7 @@ REQUIRED_USE="
 	^^ ( elogind systemd )
 	libnotify? ( notification )
 	notification? ( dbus libnotify )
-	gui? ( dbus )
+	gui? ( dbus qt6 )
 "
 IUSE="+dbus debug elogind +gui +hidapi +notification +libnotify +qt6 systemd"
 
@@ -32,11 +32,6 @@ DEPEND="
 		x11-libs/libX11
 		x11-libs/libXtst
 		gui? (
-			!qt6? (
-				dev-qt/qtcore:5
-				dev-qt/qtgui:5
-				dev-qt/qtwidgets:5
-			)
 			qt6? (
 				dev-qt/qtbase:6[gui,widgets]
 			)
@@ -80,12 +75,6 @@ src_configure() {
 				--enable-qt6
 				--disable-qt5
 			)
-		else
-			export PATH="$(qt5_get_bindir):${PATH}"
-			myeconfargs+=(
-				--disable-qt6
-				--enable-qt5
-			)
 		fi
 	else
 		myeconfargs+=(
@@ -109,7 +98,7 @@ src_install() {
 	find "${ED}" -name '*.la' -delete || die '*.la files delete failure'
 
 	if use gui ; then
-		# do NOT compress license file (must be readable by qt5 gui application)
+		# do NOT compress license file (must be readable by Qt gui application)
 		docompress -x "${EPREFIX}/usr/share/doc/${PF}/COPYING"
 	fi
 }
@@ -118,7 +107,7 @@ pkg_postinst() {
 	udev_reload
 	xdg_icon_cache_update
 
-	elog "Users who wants to use the desktop service and the Qt5 GUI must be in the glogiks group."
+	elog "Users who wants to use the desktop service and the Qt GUI must be in the glogiks group."
 	elog "See https://wiki.gentoo.org/wiki/Knowledge_Base:Adding_a_user_to_a_group"
 
 	if use debug ; then
