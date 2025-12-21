@@ -7,14 +7,25 @@ LUA_COMPAT=( lua5-{1..4} )
 
 PYTHON_COMPAT=( python3_{10..14} )
 
+TRXDATA_COMMIT="096084992d94f3d36d954bd34e0bfa1b443eeb77"
+
 if [[ ${PV} = 9999 ]]; then
 	EGIT_REPO_URI="https://github.com/LostArtefacts/TRX"
 	EGIT_BRANCH="develop"
 
 	inherit git-r3
+
+	SRC_URI="
+		https://github.com/LostArtefacts/TRX-data/archive/${TRXDATA_COMMIT}.tar.gz
+			-> ${PN}-data-${TRXDATA_COMMIT}.tar.gz
+"
+	RESTRICT="mirror"
 else
 	SRC_URI="
-		https://github.com/LostArtefacts/TRX/archive/refs/tags/trx-${PV}.tar.gz	-> ${P}.tar.gz"
+		https://github.com/LostArtefacts/TRX/archive/refs/tags/trx-${PV}.tar.gz	-> ${P}.tar.gz
+		https://github.com/LostArtefacts/TRX-data/archive/${TRXDATA_COMMIT}.tar.gz
+			-> ${PN}-data-${TRXDATA_COMMIT}.tar.gz
+"
 	RESTRICT="mirror"
 	S="${WORKDIR}/TRX-trx-${PV}"
 fi
@@ -41,8 +52,7 @@ DEPEND="
 	virtual/zlib"
 RDEPEND="
 	${DEPEND}
-	${PYTHON_DEPS}
-	~games-engines/TRX-data-9999"
+	${PYTHON_DEPS}"
 
 pkg_setup() {
 	lua-single_pkg_setup
@@ -61,6 +71,7 @@ src_configure() {
 		-Dstaticdeps=false
 		--bindir=/usr/share/${PN}
 	)
+
 	meson_src_configure
 }
 
@@ -72,13 +83,16 @@ src_install() {
 
 	for game in tr1 tr2;
 	do
-		insinto /usr/share/${PN}/${game}
-		doins -r "${S}"/data/common/ship/.
-		doins -r "${S}"/data/${game}/ship/.
-		doins ${TRX}
+		insinto "/usr/share/${PN}/${game}"
+		doins -r "${S}/data/common/ship/."
+		doins -r "${S}/data/${game}/ship/."
+		doins -r "${S}/../${PN}-data-${TRXDATA_COMMIT}/${game}/ship/."
+
+		exeinto "/usr/share/${PN}/${game}"
+		doexe "${TRX}"
 	done
 
-	rm ${TRX} || die "remove failed!"
+	rm "${TRX}" || die "remove failed!"
 }
 
 pkg_postinst() {
