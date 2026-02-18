@@ -1,4 +1,4 @@
-# Copyright 2023-2025 Gentoo Authors
+# Copyright 2023-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -7,7 +7,7 @@ LUA_COMPAT=( lua5-{1..4} )
 
 PYTHON_COMPAT=( python3_{10..14} )
 
-TRXDATA_COMMIT="096084992d94f3d36d954bd34e0bfa1b443eeb77"
+TRXDATA_COMMIT="7e6e4d2c7414a5b5d68e6e976cce73fcf9733a34"
 
 if [[ ${PV} = 9999 ]]; then
 	EGIT_REPO_URI="https://github.com/LostArtefacts/TRX"
