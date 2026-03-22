@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -65,7 +65,6 @@ src_configure() {
 		$(use_enable libnotify)
 		$(use_enable hidapi)
 		--docdir="${EPREFIX}/usr/share/doc/${PF}"
-		${EXTRA_ECONF}
 	)
 
 	if use gui ; then
@@ -73,13 +72,11 @@ src_configure() {
 			export PATH="$(qt6_get_bindir):${PATH}"
 			myeconfargs+=(
 				--enable-qt6
-				--disable-qt5
 			)
 		fi
 	else
 		myeconfargs+=(
 			--disable-qt6
-			--disable-qt5
 		)
 	fi
 
