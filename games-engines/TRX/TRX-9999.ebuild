@@ -7,33 +7,31 @@ LUA_COMPAT=( lua5-{1..4} )
 
 PYTHON_COMPAT=( python3_{10..14} )
 
-TRXDATA_COMMIT="7e6e4d2c7414a5b5d68e6e976cce73fcf9733a34"
+DESCRIPTION="Open source re-implementation of Tomb Raider I and Tomb Raider II games"
+HOMEPAGE="https://github.com/LostArtefacts/TRX"
 
+TRXDATA_COMMIT="12751b264dfc7e40dbff28ecdf37cd26619dc4cd"
+
+SRC_URI="
+	https://github.com/LostArtefacts/TRX-data/archive/${TRXDATA_COMMIT}.tar.gz
+		-> ${PN}-data-${TRXDATA_COMMIT}.tar.gz
+"
 if [[ ${PV} = 9999 ]]; then
 	EGIT_REPO_URI="https://github.com/LostArtefacts/TRX"
 	EGIT_BRANCH="develop"
 
 	inherit git-r3
 
-	SRC_URI="
-		https://github.com/LostArtefacts/TRX-data/archive/${TRXDATA_COMMIT}.tar.gz
-			-> ${PN}-data-${TRXDATA_COMMIT}.tar.gz
-"
 	RESTRICT="mirror"
 else
-	SRC_URI="
+	SRC_URI+="
 		https://github.com/LostArtefacts/TRX/archive/refs/tags/trx-${PV}.tar.gz	-> ${P}.tar.gz
-		https://github.com/LostArtefacts/TRX-data/archive/${TRXDATA_COMMIT}.tar.gz
-			-> ${PN}-data-${TRXDATA_COMMIT}.tar.gz
 "
 	RESTRICT="mirror"
 	S="${WORKDIR}/TRX-trx-${PV}"
 fi
 
 inherit lua-single meson python-r1
-
-DESCRIPTION="Open source re-implementation of Tomb Raider I and Tomb Raider II games"
-HOMEPAGE="https://github.com/LostArtefacts/TRX"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -58,11 +56,15 @@ pkg_setup() {
 	lua-single_pkg_setup
 }
 
+if [[ ${PV} = 9999 ]]; then
+
 src_unpack() {
 	unpack ${PN}-data-${TRXDATA_COMMIT}.tar.gz
 
 	git-r3_src_unpack
 }
+
+fi
 
 src_configure() {
 	local EMESON_SOURCE="${S}/src"
