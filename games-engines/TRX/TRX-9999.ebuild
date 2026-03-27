@@ -61,8 +61,6 @@ pkg_setup() {
 	lua-single_pkg_setup
 }
 
-if [[ ${PV} = 9999 ]]; then
-
 src_unpack() {
 	unpack ${PN}-data-${TRXDATA_COMMIT}.tar.gz
 
@@ -74,10 +72,8 @@ src_unpack() {
 	unpack ${PN}-${TR2EXP_NAME}.zip
 	mv "${WORKDIR}/data" "${WORKDIR}/${TR2EXP_NAME}/" || die "mv 2 failed"
 
-	git-r3_src_unpack
+	[[ "${PV}" == "9999" ]] && git-r3_src_unpack
 }
-
-fi
 
 src_configure() {
 	local EMESON_SOURCE="${S}/src"
