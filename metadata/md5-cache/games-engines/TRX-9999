@@ -1,4 +1,4 @@
-BDEPEND=>=dev-vcs/git-1.8.2.1[curl] >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
+BDEPEND=app-arch/unzip >=dev-vcs/git-1.8.2.1[curl] >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
 DEFINED_PHASES=compile configure install postinst setup test unpack
 DEPEND=lua_single_target_lua5-1? ( dev-lang/lua:5.1 ) lua_single_target_lua5-3? ( dev-lang/lua:5.3 ) lua_single_target_lua5-4? ( dev-lang/lua:5.4 ) >=dev-libs/uthash-2.3.0 dev-python/json5[python_targets_python3_11(-)?,python_targets_python3_12(-)?,python_targets_python3_13(-)?,python_targets_python3_14(-)?] dev-vcs/git media-libs/glew media-libs/libsdl2 media-video/ffmpeg virtual/zlib
 DESCRIPTION=Open source re-implementation of Tomb Raider I and Tomb Raider II games
@@ -12,6 +12,6 @@ RDEPEND=lua_single_target_lua5-1? ( dev-lang/lua:5.1 ) lua_single_target_lua5-3?
 REQUIRED_USE=^^ ( lua_single_target_lua5-1 lua_single_target_lua5-3 lua_single_target_lua5-4 ) || ( python_targets_python3_11 python_targets_python3_12 python_targets_python3_13 python_targets_python3_14 )
 RESTRICT=mirror
 SLOT=0
-SRC_URI=https://github.com/LostArtefacts/TRX-data/archive/12751b264dfc7e40dbff28ecdf37cd26619dc4cd.tar.gz -> TRX-data-12751b264dfc7e40dbff28ecdf37cd26619dc4cd.tar.gz
+SRC_URI=https://github.com/LostArtefacts/TRX-data/archive/12751b264dfc7e40dbff28ecdf37cd26619dc4cd.tar.gz -> TRX-data-12751b264dfc7e40dbff28ecdf37cd26619dc4cd.tar.gz https://lostartefacts.dev/aux/tr1x/trub-music.zip -> TRX-tr1-ub.zip https://lostartefacts.dev/aux/tr2x/trgm.zip -> TRX-tr2-gm.zip
 _eclasses_=git-r3	7b584b5dc33e3bc66ff5b9271bf41764	toolchain-funcs	5195689ff6a73b0e789acfa09d4fbcb9	lua-utils	7c89927eda6f21c4c48136247077ab37	lua-single	75fe955a36b18e199213c8739eaebdbb	flag-o-matic	fd3558f73f6503093adee69adf41020d	multiprocessing	d4511f019dc17ec44bfe46b9e672ca64	ninja-utils	d063ea1900a793f93eb095010d6d9156	eapi9-pipestatus	d2c134036ac31c3085aebc9147f572bd	python-utils-r1	9c4180f103a0e8340bc993fc85dbdadd	sysroot	ba2e3d2f7daad91fdef9350dc789d87f	rust-toolchain	76468983281b0a7fc167ca224f84ecfd	meson	76c5dcd585ba0bb875a92ce2ce5ad9f5	out-of-source-utils	8e5093bd27b7f541a1913271f25d633a	multibuild	83db098a835f71feb71761f72a694aa2	python-r1	5fdca77e34fc9af7d6eb47689f33f6bf
-_md5_=d6946771da7fad3d805702946f713b69
+_md5_=a602e6f9215ae4cdbb20064e104feb22
