@@ -21,7 +21,7 @@ SRC_URI="
 	https://lostartefacts.dev/aux/tr1x/trub-music.zip -> ${PN}-${TR1EXP_NAME}.zip
 	https://lostartefacts.dev/aux/tr2x/trgm.zip -> ${PN}-${TR2EXP_NAME}.zip
 "
-if [[ ${PV} = 9999 ]]; then
+if [[ "${PV}" == "9999" ]]; then
 	EGIT_REPO_URI="https://github.com/LostArtefacts/TRX"
 	EGIT_BRANCH="develop"
 

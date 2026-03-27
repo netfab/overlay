@@ -16,7 +16,7 @@ SRC_URI="
 	https://github.com/LostArtefacts/TRX-data/archive/${TRXDATA_COMMIT}.tar.gz
 		-> ${PN}-data-${TRXDATA_COMMIT}.tar.gz
 "
-if [[ ${PV} = 9999 ]]; then
+if [[ "${PV}" == "9999" ]]; then
 	EGIT_REPO_URI="https://github.com/LostArtefacts/TRX"
 	EGIT_BRANCH="develop"
 
@@ -56,7 +56,7 @@ pkg_setup() {
 	lua-single_pkg_setup
 }
 
-if [[ ${PV} = 9999 ]]; then
+if [[ "${PV}" == "9999" ]]; then
 
 src_unpack() {
 	unpack ${PN}-data-${TRXDATA_COMMIT}.tar.gz
