@@ -69,7 +69,7 @@ src_configure() {
 
 	if use gui ; then
 		if use qt6 ; then
-			export PATH="$(qt6_get_bindir):${PATH}"
+			export PATH="$(qt6_get_libexecdir):$(qt6_get_bindir):${PATH}"
 			myeconfargs+=(
 				--enable-qt6
 			)
