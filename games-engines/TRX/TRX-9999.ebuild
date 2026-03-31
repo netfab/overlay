@@ -10,7 +10,7 @@ PYTHON_COMPAT=( python3_{10..14} )
 DESCRIPTION="Open source re-implementation of Tomb Raider I and Tomb Raider II games"
 HOMEPAGE="https://github.com/LostArtefacts/TRX"
 
-TRXDATA_COMMIT="12751b264dfc7e40dbff28ecdf37cd26619dc4cd"
+TRXDATA_COMMIT="0f3af8601304a65733c533da88365ee171dbf070"
 
 TR1EXP_NAME="tr1-ub" # tr1 Unfinished Business expansion pack
 TR2EXP_NAME="tr2-gm" # tr2 Golden Mask expansion pack
@@ -110,16 +110,17 @@ src_install() {
 	for game in tr1 tr1-ub tr2 tr2-gm tr3;
 	do
 		insinto "${II}/games/${game}"
-		doins -r "${TRXDATA_S}/${game/-}/ship/data/images"
+		doins -r "${TRXDATA_S}/${game}/ship/data/images"
 	done
 
 	# expansions
 	insinto "${II}/games/tr1-ub/levels"
 	doins "${WORKDIR}/${TR1EXP_NAME}/data/"*.phd
 
+	insinto "${II}/games/tr2-gm"
+	doins "${WORKDIR}/${TR2EXP_NAME}/data/main_gm.sfx"
 	insinto "${II}/games/tr2-gm/levels"
 	doins "${WORKDIR}/${TR2EXP_NAME}/data/"*.tr2
-	doins "${WORKDIR}/${TR2EXP_NAME}/data/main_gm.sfx"
 }
 
 pkg_postinst() {
