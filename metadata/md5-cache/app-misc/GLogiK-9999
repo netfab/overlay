@@ -11,5 +11,5 @@ PROPERTIES=live
 RDEPEND=acct-group/glogiks >=acct-user/glogikd-1 elogind? ( sys-auth/elogind ) systemd? ( sys-apps/systemd ) dev-libs/boost:= hidapi? ( >=dev-libs/hidapi-0.10.0 ) dbus? ( dev-libs/libevdev sys-apps/dbus x11-libs/libICE x11-libs/libSM x11-libs/libX11 x11-libs/libXtst gui? ( qt6? ( dev-qt/qtbase:6[gui,widgets] ) ) ) notification? ( libnotify? ( >=x11-libs/libnotify-0.8.1 ) ) virtual/libudev virtual/libusb:1 virtual/tmpfiles
 REQUIRED_USE=^^ ( elogind systemd ) libnotify? ( notification ) notification? ( dbus libnotify ) gui? ( dbus qt6 )
 SLOT=0
-_eclasses_=autotools	0698802996fcfe9a604eac3c1f6e7112	git-r3	7b584b5dc33e3bc66ff5b9271bf41764	gnuconfig	b4fa4889c6f586d6b069215a86dd9e53	libtool	6a96cd90e5da8c7c615015479f46f1a4	qmake-utils	28f99dba9219112f4785f46ed426a021	tmpfiles	e0b49bcd7a0daea941c0fbe4cb35ff4e	toolchain-funcs	5195689ff6a73b0e789acfa09d4fbcb9	udev	20c370aff0d0c108f3605c84b3f47084	xdg-utils	42869b3c8d86a70ef3cf75165a395e09
-_md5_=db22db560c86a3147b238da43441fdab
+_eclasses_=gnuconfig	b4fa4889c6f586d6b069215a86dd9e53	toolchain-funcs	5195689ff6a73b0e789acfa09d4fbcb9	libtool	6a96cd90e5da8c7c615015479f46f1a4	autotools	0698802996fcfe9a604eac3c1f6e7112	git-r3	7b584b5dc33e3bc66ff5b9271bf41764	tmpfiles	e0b49bcd7a0daea941c0fbe4cb35ff4e	qmake-utils	28f99dba9219112f4785f46ed426a021	udev	20c370aff0d0c108f3605c84b3f47084	xdg-utils	42869b3c8d86a70ef3cf75165a395e09
+_md5_=b018513aba8ed5cf9e59c642be9bf197
