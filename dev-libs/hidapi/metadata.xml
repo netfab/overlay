@@ -5,9 +5,6 @@
     <email>netbox253@gmail.com</email>
     <name>Fabrice Delliaux</name>
   </maintainer>
-  <use>
-    <flag name="fox">Build a x11-libs/fox GUI</flag>
-  </use>
   <upstream>
     <remote-id type="github">libusb/hidapi</remote-id>
   </upstream>
