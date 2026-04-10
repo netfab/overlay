@@ -10,7 +10,7 @@ PYTHON_COMPAT=( python3_{10..14} )
 DESCRIPTION="Open source re-implementation of Tomb Raider I and Tomb Raider II games"
 HOMEPAGE="https://github.com/LostArtefacts/TRX"
 
-TRXDATA_COMMIT="0f3af8601304a65733c533da88365ee171dbf070"
+TRXDATA_COMMIT="f84aa310260a0ba355efd40c224ba42136cddcb4"
 
 TR1EXP_NAME="tr1-ub" # tr1 Unfinished Business expansion pack
 TR2EXP_NAME="tr2-gm" # tr2 Golden Mask expansion pack
@@ -72,7 +72,11 @@ src_unpack() {
 	unpack ${PN}-${TR2EXP_NAME}.zip
 	mv "${WORKDIR}/data" "${WORKDIR}/${TR2EXP_NAME}/" || die "mv 2 failed"
 
-	[[ "${PV}" == "9999" ]] && git-r3_src_unpack
+	if [[ "${PV}" == "9999" ]]; then
+		git-r3_src_unpack
+	else
+		unpack ${P}.tar.gz
+	fi
 }
 
 src_configure() {
