@@ -4,8 +4,8 @@
 <!-- maintainer-needed -->
 	<upstream>
 		<maintainer status="active">
-			<name>Peter Hofmann</name>
+			<name>movq</name>
 		</maintainer>
-		<bugs-to>https://uninformativ.de/bugs.html</bugs-to>
+		<bugs-to>https://movq.de/bugs.html</bugs-to>
 	</upstream>
 </pkgmetadata>
