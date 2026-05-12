@@ -2,11 +2,11 @@ BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
 DEFINED_PHASES=install unpack
 DESCRIPTION=Create X11 pointer barriers around your working area
 EAPI=8
-HOMEPAGE=https://www.uninformativ.de/git/xpointerbarrier/file/README.html
+HOMEPAGE=https://movq.de/git/xpointerbarrier/file/README.html
 INHERIT=git-r3
 LICENSE=MIT
 PROPERTIES=live
 RDEPEND=x11-libs/libX11 x11-libs/libXfixes x11-libs/libXrandr
 SLOT=0
 _eclasses_=git-r3	7b584b5dc33e3bc66ff5b9271bf41764
-_md5_=84f114b050407717b21a561fee4e727f
+_md5_=1b42e36c7f1e334bb67b7a4a67068e53
