@@ -4,9 +4,9 @@
 <!-- maintainer-needed -->
 	<upstream>
 		<maintainer status="active">
-			<name>foresto</name>
+			<name>forestix</name>
 		</maintainer>
-		<bugs-to>https://github.com/foresto/joystickwake/issues</bugs-to>
-		<remote-id type="github">foresto/joystickwake</remote-id>
+		<bugs-to>https://codeberg.org/forestix/joystickwake/issues</bugs-to>
+		<remote-id type="codeberg">forestix/joystickwake</remote-id>
 	</upstream>
 </pkgmetadata>

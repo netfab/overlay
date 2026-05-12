@@ -4,21 +4,25 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..13} )
+PYTHON_COMPAT=( python3_{10..14} )
+
+MY_ROOT_URI="https://codeberg.org/forestix/${PN}"
 
 if [[ "${PV}" == "9999" ]]; then
-	EGIT_REPO_URI="https://github.com/foresto/joystickwake.git"
+	EGIT_REPO_URI="${MY_ROOT_URI}"
 	inherit git-r3
 else
 	RESTRICT="mirror"
-	SRC_URI="https://github.com/foresto/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+	SRC_URI="${MY_ROOT_URI}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64"
 fi
 
 inherit distutils-r1
 
 DESCRIPTION="A joystick-aware screen waker"
-HOMEPAGE="https://github.com/foresto/joystickwake"
+HOMEPAGE="https://codeberg.org/forestix/joystickwake"
+
+S="${WORKDIR}/${PN}"
 
 LICENSE="MIT"
 SLOT="0"
