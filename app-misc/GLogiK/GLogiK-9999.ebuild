@@ -6,7 +6,7 @@ EAPI=8
 EGIT_REPO_URI="https://framagit.org/netfab/GLogiK.git/"
 EGIT_BRANCH="dev"
 
-inherit autotools git-r3 tmpfiles qmake-utils udev xdg-utils
+inherit git-r3 meson tmpfiles udev xdg-utils
 
 DESCRIPTION="Daemon to handle special features on gaming keyboards"
 HOMEPAGE="https://netfab.frama.io/pages/glogik/"
@@ -20,6 +20,7 @@ REQUIRED_USE="
 	libnotify? ( notification )
 	notification? ( dbus libnotify )
 	gui? ( dbus qt6 )
+	qt6? ( gui )
 "
 IUSE="+dbus debug elogind +gui +hidapi +libnotify +notification +qt6 systemd"
 
@@ -52,47 +53,23 @@ RDEPEND="
 
 DOCS=()
 
-src_prepare() {
-	default
-	eautoreconf
-}
-
 src_configure() {
-	local myeconfargs=(
-		$(use_enable dbus)
-		$(use_enable debug)
-		$(use_enable notification notifications)
-		$(use_enable libnotify)
-		$(use_enable hidapi)
-		--docdir="${EPREFIX}/usr/share/doc/${PF}"
+	local emesonargs=(
+		$(meson_use dbus)
+		$(meson_use debug)
+		$(meson_use hidapi)
+		$(meson_use libnotify)
+		$(meson_use notification notifications)
+		$(meson_use qt6)
+		$(meson_use qt6 systray)
+		-Ddocdir="${EPREFIX}/usr/share/doc/${PF}"
 	)
 
-	if use gui ; then
-		if use qt6 ; then
-			export PATH="$(qt6_get_libexecdir):$(qt6_get_bindir):${PATH}"
-			myeconfargs+=(
-				--enable-qt6
-			)
-		fi
-	else
-		myeconfargs+=(
-			--disable-qt6
-		)
-	fi
-
-	econf "${myeconfargs[@]}"
+	meson_src_configure
 }
 
 src_install() {
-	default
-
-	doinitd "${S}"/data/init/openrc/glogikd
-
-	if use debug ; then
-		dotmpfiles data/tmpfiles.d/GLogiK.conf
-	fi
-
-	find "${ED}" -name '*.la' -delete || die '*.la files delete failure'
+	meson_src_install
 
 	if use gui ; then
 		# do NOT compress license file (must be readable by Qt gui application)
