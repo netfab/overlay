@@ -1,9 +1,9 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-inherit autotools tmpfiles qmake-utils udev xdg-utils
+inherit autotools tmpfiles qt-utils udev xdg-utils
 
 DESCRIPTION="Daemon to handle special features on gaming keyboards"
 HOMEPAGE="https://netfab.frama.io/pages/glogik/"
@@ -70,7 +70,7 @@ src_configure() {
 
 	if use gui ; then
 		if use qt6 ; then
-			export PATH="$(qt6_get_bindir):${PATH}"
+			export PATH="$(qt_get_bindir 6):${PATH}"
 			myeconfargs+=(
 				--enable-qt6
 				--disable-qt5
