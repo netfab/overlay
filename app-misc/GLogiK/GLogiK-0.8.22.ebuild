@@ -19,7 +19,7 @@ REQUIRED_USE="
 	notification? ( dbus libnotify )
 	gui? ( dbus qt6 )
 "
-IUSE="+dbus debug elogind +gui +hidapi +notification +libnotify +qt6 systemd"
+IUSE="+dbus debug +elogind +gui +hidapi +notification +libnotify +qt6 systemd"
 
 DEPEND="
 	dev-libs/boost:=
