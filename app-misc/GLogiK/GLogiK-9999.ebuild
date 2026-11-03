@@ -30,6 +30,7 @@ DEPEND="
 	dbus? (
 		dev-libs/libevdev
 		sys-apps/dbus
+		>=x11-base/xorg-proto-2025.1
 		x11-libs/libICE
 		x11-libs/libSM
 		x11-libs/libX11
@@ -40,7 +41,12 @@ DEPEND="
 			)
 		)
 	)
-	notification? ( libnotify? ( >=x11-libs/libnotify-0.8.1 ) )
+	notification? (
+		libnotify? (
+			>=dev-libs/glib-2.88.2
+			>=x11-libs/libnotify-0.8.1
+		)
+	)
 	virtual/libudev
 	virtual/libusb:1
 "
