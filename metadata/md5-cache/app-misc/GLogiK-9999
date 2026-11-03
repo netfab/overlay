@@ -1,6 +1,6 @@
 BDEPEND=>=dev-vcs/git-1.8.2.1[curl] >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array virtual/pkgconfig
 DEFINED_PHASES=compile configure install postinst postrm test unpack
-DEPEND=dev-libs/boost:= hidapi? ( >=dev-libs/hidapi-0.10.0 ) dbus? ( dev-libs/libevdev sys-apps/dbus x11-libs/libICE x11-libs/libSM x11-libs/libX11 x11-libs/libXtst gui? ( qt6? ( dev-qt/qtbase:6[gui,widgets] ) ) ) notification? ( libnotify? ( >=x11-libs/libnotify-0.8.1 ) ) virtual/libudev virtual/libusb:1
+DEPEND=dev-libs/boost:= hidapi? ( >=dev-libs/hidapi-0.10.0 ) dbus? ( dev-libs/libevdev sys-apps/dbus >=x11-base/xorg-proto-2025.1 x11-libs/libICE x11-libs/libSM x11-libs/libX11 x11-libs/libXtst gui? ( qt6? ( dev-qt/qtbase:6[gui,widgets] ) ) ) notification? ( libnotify? ( >=dev-libs/glib-2.88.2 >=x11-libs/libnotify-0.8.1 ) ) virtual/libudev virtual/libusb:1
 DESCRIPTION=Daemon to handle special features on gaming keyboards
 EAPI=8
 HOMEPAGE=https://netfab.frama.io/pages/glogik/
@@ -8,8 +8,8 @@ INHERIT=git-r3 meson tmpfiles udev xdg-utils
 IUSE=+dbus debug +elogind +gui +hidapi +libnotify +notification +qt6 systemd
 LICENSE=GPL-3
 PROPERTIES=live
-RDEPEND=acct-group/glogiks >=acct-user/glogikd-1 elogind? ( sys-auth/elogind ) systemd? ( sys-apps/systemd ) dev-libs/boost:= hidapi? ( >=dev-libs/hidapi-0.10.0 ) dbus? ( dev-libs/libevdev sys-apps/dbus x11-libs/libICE x11-libs/libSM x11-libs/libX11 x11-libs/libXtst gui? ( qt6? ( dev-qt/qtbase:6[gui,widgets] ) ) ) notification? ( libnotify? ( >=x11-libs/libnotify-0.8.1 ) ) virtual/libudev virtual/libusb:1 virtual/tmpfiles
+RDEPEND=acct-group/glogiks >=acct-user/glogikd-1 elogind? ( sys-auth/elogind ) systemd? ( sys-apps/systemd ) dev-libs/boost:= hidapi? ( >=dev-libs/hidapi-0.10.0 ) dbus? ( dev-libs/libevdev sys-apps/dbus >=x11-base/xorg-proto-2025.1 x11-libs/libICE x11-libs/libSM x11-libs/libX11 x11-libs/libXtst gui? ( qt6? ( dev-qt/qtbase:6[gui,widgets] ) ) ) notification? ( libnotify? ( >=dev-libs/glib-2.88.2 >=x11-libs/libnotify-0.8.1 ) ) virtual/libudev virtual/libusb:1 virtual/tmpfiles
 REQUIRED_USE=^^ ( elogind systemd ) libnotify? ( notification ) notification? ( dbus libnotify ) gui? ( dbus qt6 ) qt6? ( gui )
 SLOT=0
-_eclasses_=git-r3	e6c2f983e006e805160436c75a0c1562	toolchain-funcs	58a918e3a42d0156f010dcfd43725be5	flag-o-matic	fd3558f73f6503093adee69adf41020d	multiprocessing	45d0620f25c2f063ad6276ecd9ed9399	ninja-utils	d063ea1900a793f93eb095010d6d9156	eapi9-pipestatus	d2c134036ac31c3085aebc9147f572bd	python-utils-r1	85d8fb641bb0e79b1ae893556e9c57bc	sysroot	4c36abaf94ebd3ab32f8abea9a444121	rust-toolchain	76468983281b0a7fc167ca224f84ecfd	meson	4d3a148e5931f2930e970884bcb4c77d	tmpfiles	e0b49bcd7a0daea941c0fbe4cb35ff4e	udev	1a23882bb73bc31c64a6f00a5e515f34	xdg-utils	42869b3c8d86a70ef3cf75165a395e09
-_md5_=5e23ffbf7c9ad75b78fee21189da1a41
+_eclasses_=git-r3	e6c2f983e006e805160436c75a0c1562	toolchain-funcs	58a918e3a42d0156f010dcfd43725be5	flag-o-matic	fd3558f73f6503093adee69adf41020d	multiprocessing	45d0620f25c2f063ad6276ecd9ed9399	ninja-utils	d063ea1900a793f93eb095010d6d9156	eapi9-pipestatus	d2c134036ac31c3085aebc9147f572bd	python-utils-r1	025367880f07ae6444e6035a49db0dab	sysroot	4c36abaf94ebd3ab32f8abea9a444121	rust-toolchain	76468983281b0a7fc167ca224f84ecfd	meson	4d3a148e5931f2930e970884bcb4c77d	tmpfiles	e0b49bcd7a0daea941c0fbe4cb35ff4e	udev	1a23882bb73bc31c64a6f00a5e515f34	xdg-utils	42869b3c8d86a70ef3cf75165a395e09
+_md5_=2210d2a02a77bd6f0d6aa04380b6f821
